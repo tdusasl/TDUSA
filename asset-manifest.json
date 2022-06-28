@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tdusa/static/css/main.073c9b0a.css",
-    "main.js": "/tdusa/static/js/main.11748920.js",
-    "static/js/787.652e0442.chunk.js": "/tdusa/static/js/787.652e0442.chunk.js",
-    "index.html": "/tdusa/index.html",
-    "main.073c9b0a.css.map": "/tdusa/static/css/main.073c9b0a.css.map",
-    "main.11748920.js.map": "/tdusa/static/js/main.11748920.js.map",
-    "787.652e0442.chunk.js.map": "/tdusa/static/js/787.652e0442.chunk.js.map"
+    "main.css": "/TDUSA/static/css/main.073c9b0a.css",
+    "main.js": "/TDUSA/static/js/main.4f747e4d.js",
+    "static/js/787.652e0442.chunk.js": "/TDUSA/static/js/787.652e0442.chunk.js",
+    "index.html": "/TDUSA/index.html",
+    "main.073c9b0a.css.map": "/TDUSA/static/css/main.073c9b0a.css.map",
+    "main.4f747e4d.js.map": "/TDUSA/static/js/main.4f747e4d.js.map",
+    "787.652e0442.chunk.js.map": "/TDUSA/static/js/787.652e0442.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.11748920.js"
+    "static/js/main.4f747e4d.js"
   ]
 }
