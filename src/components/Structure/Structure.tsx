@@ -5,17 +5,19 @@ import { useState, useEffect } from "react";
 
 
 const Structure = () => {
-  const [committee, setExecutiveCommittee] = useState<any>([]);
-  const eventsUri = process.env.REACT_APP_COMITTEE_MEMBERS!;
-  var data = [];
+  const [executiveCommittee, setExecutiveCommittee] = useState<any>([]);
+  const committeeUri = process.env.REACT_APP_COMITTEE_MEMBERS!;
+  const auditor = process.env.REACT_APP_AUDITOR!;
+  const legalAdvisor = process.env.REACT_APP_LEGAL_ADVISOR!;
+  const patrons = process.env.REACT_APP_PATRONS?.split(',')!;
+  const monitoringCommittee = process.env.REACT_APP_MONITORING_COMMITEE_1?.split(',')!;
   const fetchCommittee = () => {
-    Papa.parse(eventsUri, {
+    Papa.parse(committeeUri, {
       download: true,
       header: true,
       complete: function (results) {
         console.log(results.data);
         setExecutiveCommittee( results.data );      
-
       },
     });
   };
@@ -28,11 +30,19 @@ const Structure = () => {
 
 
   return (
-    (committee) &&
+    (executiveCommittee) &&
     <div>
       Structure
+      <div>Patrons
+        <div>
+          {patrons.map((item: any) => (
+            <div>{item}</div>
+          ))}
+        </div>
+      </div>
       <div>
-        {committee.map((item: any) => (
+        <div>Executive Committee</div>
+        {executiveCommittee.map((item: any) => (
           <div>
           <div>{item.name}</div>
           {/* <img
@@ -44,6 +54,20 @@ const Structure = () => {
               <h4>{item.designation}</h4>
           </div>
         ))}
+      </div>
+      <div>Monitoring Committee
+        <div>
+          {monitoringCommittee.map((item: any) => (
+            <div>{item}</div>
+          ))}
+        </div>
+      </div>
+      <div>Auditor 
+        <div>{auditor}</div>
+      </div> 
+      <div>
+        Legal Advisor
+        <div>{legalAdvisor}</div>
       </div>
     </div>
   );
