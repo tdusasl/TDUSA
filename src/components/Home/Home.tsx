@@ -10,7 +10,7 @@ const Home = () => {
       <Typewriter
         options={{
             loop: true,
-            cursor: "|..",
+            cursor: "|",
             deleteSpeed: 0.5,
         }}
         onInit={(typewriter) => {

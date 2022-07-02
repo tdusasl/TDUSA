@@ -51,10 +51,6 @@ const Events = () => {
               background: "rgb(33, 150, 243)",
               color: "#fff",
               fontFamily: "Roboto",
-              // width: "20px",
-              // height: "20px",
-              // marginTop: "20px",
-              // marginLeft: "-10px",
             }}
           >
             <h3 className="vertical-timeline-element-title">{item.name}</h3>
