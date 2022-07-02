@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import PastPapers from "./components/PastPapers/PastPapers";
+import Stats from "./components/Stats/Stats";
 import Structure from "./components/Structure/Structure";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <Home/>
         <Events/>
+        <Stats/>
         <Structure/>
         <PastPapers/>
         <Footer/>

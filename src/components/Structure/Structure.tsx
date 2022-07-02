@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import Papa from "papaparse";
 import { useState, useEffect } from "react";
 
