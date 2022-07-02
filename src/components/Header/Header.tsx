@@ -4,7 +4,7 @@ const Header = () => {
     
     <div>
       <header className="header" id="header">
-        Hello
+        Header
       </header>
     </div>
   );
