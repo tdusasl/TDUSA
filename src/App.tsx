@@ -11,6 +11,7 @@ import { useState, CSSProperties } from "react";
 import DotLoader from "react-spinners/DotLoader";
 import Testimonial from "./components/Testimonial/Testimonial";
 import NavProvider from "./context/NavContext";
+import Results from "./components/Results/Results";
 const override: CSSProperties = {
   margin: "0 auto",
   borderColor: "red",
@@ -36,6 +37,7 @@ function App() {
         />
       </div> */}
         <Header />
+        <Results/>
         <Home />
         <Events />
         <Stats />
