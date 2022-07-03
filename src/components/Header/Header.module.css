@@ -41,7 +41,7 @@
   box-shadow: 0 0 16px hsla(207, 66%, 75%, .4);
   color: hsl(207, 15%, 95%);
   border-radius: 50%;
-  padding: 1rem 1rem 1rem 1rem;
+  /* padding: 1rem 1rem 1rem 1rem; */
 }
 
 @media screen and (max-width:576px) {

@@ -119,16 +119,10 @@ const Results = () => {
           {"Select your stream and Enter Index number"}
         </DialogTitle>
         <DialogContent className="content">
-          <FormControl variant="standard">
-            <InputLabel htmlFor="component-simple">Index Number</InputLabel>
-            <Input
-              id="component-simple"
-              value={indexNo}
-              onChange={handleInputChange}
-            />
-          </FormControl>
-          <FormControl variant="standard">
+
+        <FormControl variant="standard">
             <TextField
+            style={{"margin": "10px"}}
               className="input"
               id="outlined-select-stream"
               select
@@ -144,23 +138,48 @@ const Results = () => {
               ))}
             </TextField>
           </FormControl>
+          <FormControl style={{"margin": "10px"}} variant="standard">
+            <InputLabel htmlFor="component-simple">Index Number</InputLabel>
+            <Input
+              id="component-simple"
+              value={indexNo}
+              onChange={handleInputChange}
+            />
+          </FormControl>
+          
 
           <DialogContentText id="alert-dialog-description"></DialogContentText>
-          {result && <div>
-            <div>Stream: {result?.Stream}</div>
-            <div>Name: {result?.Name}</div>
-            <div>IndexNo: {result?.IndexNo}</div>
-            {result?.Biology && <div>Biology: {result?.Biology}</div>}
-            {result?.Chemistry && <div>Chemistry: {result?.Chemistry}</div>}
-            {result?.Mathematics && <div>Mathematics: {result?.Mathematics}</div>}
-            {result?.Physics && <div>Physics: {result?.Physics}</div>}
-            {result?.Economics && <div>Economics: {result?.Economics}</div>}
-            {result?.BusinessStudies && <div>BusinessStudies: {result?.BusinessStudies}</div>}
-            {result?.InformationTechnology && <div>InformationTechnology: {result?.InformationTechnology}</div>}
-            {result?.Accounting && <div>Accounting: {result?.Accounting}</div>}
-            {result?.Rank && <div>Rank: {result?.Rank}</div>}
-            <div>ZScore:{result?.ZScore}</div>
-          </div>}
+          {result && (
+            <div className="result">
+              <div>
+                <div>Stream :</div> {result?.Stream}
+              </div>
+              <div>
+                <div>Name :</div> {result?.Name}
+              </div>
+              <div><div>IndexNo :</div> {result?.IndexNo}</div>
+              {result?.Biology && <div><div>Biology :</div> {result?.Biology}</div>}
+              {result?.Chemistry && <div><div>Chemistry :</div> {result?.Chemistry}</div>}
+              {result?.Mathematics && (
+                <div><div>Mathematics :</div> {result?.Mathematics}</div>
+              )}
+              {result?.Physics && <div><div>Physics :</div> {result?.Physics}</div>}
+              {result?.Economics && <div><div>Economics :</div> {result?.Economics}</div>}
+              {result?.BusinessStudies && (
+                <div><div>BusinessStudies :</div> {result?.BusinessStudies}</div>
+              )}
+              {result?.InformationTechnology && (
+                <div>
+                  <div>InformationTechnology :</div> {result?.InformationTechnology}
+                </div>
+              )}
+              {result?.Accounting && (
+                <div><div>Accounting :</div> {result?.Accounting}</div>
+              )}
+              {result?.Rank && <div><div>Rank :</div> {result?.Rank}</div>}
+              <div><div>ZScore :</div>{result?.ZScore}</div>
+            </div>
+          )}
         </DialogContent>
         <DialogActions>
           <Button onClick={fetchResults}>Submit</Button>

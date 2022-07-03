@@ -1,7 +1,9 @@
-.content{
-    
+
+.result>div{
+    padding: 10px;
+    width: 100%;
+    display: flex;
 }
-.input{
-    margin-top: 10px;
-    padding: 20px;
+.result>div>div{
+    width: 30%;
 }
