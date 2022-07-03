@@ -69,7 +69,7 @@ const Home = () => {
                 width: 1,
               },
               collisions: {
-                enable: true,
+                enable: false,
               },
               move: {
                 direction: "none",
@@ -78,8 +78,8 @@ const Home = () => {
                   default: "bounce",
                 },
                 random: false,
-                speed: 2,
-                straight: false,
+                speed: 1.5,
+                straight: true,
               },
               number: {
                 density: {
