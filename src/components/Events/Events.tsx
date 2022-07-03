@@ -33,7 +33,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div>
+    <div id='eventsContainer'>
       <h1>Events</h1>
       <div></div>
       <VerticalTimeline 

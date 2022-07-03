@@ -10,13 +10,14 @@ import Structure from "./components/Structure/Structure";
 import { useState, CSSProperties } from "react";
 import DotLoader from "react-spinners/DotLoader";
 import Testimonial from "./components/Testimonial/Testimonial";
+import NavProvider from "./context/NavContext";
 const override: CSSProperties = {
   margin: "0 auto",
   borderColor: "red",
   position: "absolute",
   top: "50%",
   left: "50%",
-  zIndex:'999'
+  zIndex: "999",
 };
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <div className="loader">
+      <NavProvider>
+        {/* <div className="loader">
         <DotLoader
           color={color}
           loading={loading}
@@ -33,14 +35,15 @@ function App() {
           size={150}
         />
       </div> */}
-      <Header />
-      <Home />
-      <Events />
-      <Stats />
-      <Testimonial/>
-      <Structure />
-      <PastPapers />
-      <Footer />
+        <Header />
+        <Home />
+        <Events />
+        <Stats />
+        <Testimonial />
+        <Structure />
+        <PastPapers />
+        <Footer />
+      </NavProvider>
     </div>
   );
 }

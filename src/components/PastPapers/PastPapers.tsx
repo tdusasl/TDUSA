@@ -24,7 +24,7 @@ const PastPapers = () => {
     },[]);
 
     return (
-        <div>
+        <div id='paperContainer'>
         <h1>Past Papers</h1>
         {pastPapers.map((item: any) => (
             <div>{item.stream}</div>

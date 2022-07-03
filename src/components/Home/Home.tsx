@@ -20,7 +20,7 @@ const Home = () => {
     return Promise.resolve();
   };
   return (
-    <div>
+    <div id='homeContainer'>
       <div >
         <Particles className="particles"
           id="tsparticles"

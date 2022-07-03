@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  width: 80%;
+  width: 20%;
   position: fixed;
   bottom: 1rem;
   z-index: 99;;  
@@ -36,10 +36,17 @@
   cursor: pointer;
   height: 40px;
 }
-.navElements div.activeLink {
+.navElements div.activeClass {
   background: linear-gradient(180deg, hsla(207, 66%, 75%, 1), hsla(207, 66%, 75%, .2));
   box-shadow: 0 0 16px hsla(207, 66%, 75%, .4);
   color: hsl(207, 15%, 95%);
   border-radius: 50%;
   padding: 1rem 1rem 1rem 1rem;
+}
+
+@media screen and (max-width:576px) {
+  .navElements {
+    width: 80%;
+  }
+
 }

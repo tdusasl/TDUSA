@@ -30,7 +30,7 @@ const Structure = () => {
 
   return (
     (executiveCommittee) &&
-    <div>
+    <div id='structureContainer'>
       Structure
       <div>Patrons
         <div>
