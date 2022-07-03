@@ -62,7 +62,12 @@ const Events = () => {
         ))}
 
         {/* <VerticalTimelineElement
-          iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
+         iconStyle={{
+          background: "var(--color-primary)",
+          color: "var(--color-secondary)",
+          fontFamily: "Roboto",
+          backgroundColor: "var(--color-primary)",
+        }}
         /> */}
       </VerticalTimeline>
       <button className="button" onClick={showAllEvents}>Show more</button>
