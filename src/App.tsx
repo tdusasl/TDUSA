@@ -33,7 +33,6 @@ function App() {
           size={150}
         />
       </div> */}
-
       <Header />
       <Home />
       <Events />

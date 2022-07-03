@@ -1,10 +1,8 @@
 import Papa from "papaparse";
 import { useEffect, useState } from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import {VerticalTimeline,VerticalTimelineElement,} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import './Events.css'
 
 const Events = () => {
   const [events, setEvents] = useState<any>([]);
@@ -39,7 +37,7 @@ const Events = () => {
       <h1>Events</h1>
       <div></div>
       <VerticalTimeline 
-      lineColor="rgb(0, 255,0 )"
+      lineColor="var(--color-secondary)"
       >
         {events.slice(0,numberOfEventsToDisplay).map((item: any) => (
           <VerticalTimelineElement
@@ -48,9 +46,10 @@ const Events = () => {
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
             // date="2011 - present"
             iconStyle={{
-              background: "rgb(33, 150, 243)",
-              color: "#fff",
+              background: "var(--color-primary)",
+              color: "var(--color-secondary)",
               fontFamily: "Roboto",
+              backgroundColor: "var(--color-primary)",
             }}
           >
             <h3 className="vertical-timeline-element-title">{item.name}</h3>
@@ -66,7 +65,7 @@ const Events = () => {
           iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
         /> */}
       </VerticalTimeline>
-      <button onClick={showAllEvents}>Show more</button>
+      <button className="button" onClick={showAllEvents}>Show more</button>
 
     </div>
   );

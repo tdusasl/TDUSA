@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .App {
   text-align: center;
+  background-color: #0b111e;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 .loader{
   width:500px;
@@ -22,7 +26,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--color-primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,7 +37,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--color-secondary);
 }
 
 @keyframes App-logo-spin {

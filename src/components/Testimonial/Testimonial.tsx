@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
+/* eslint-disable jsx-a11y/alt-text */
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import './Testimonial.css'
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import './Testimonial.css'
 
 
 // import required modules
@@ -17,7 +17,7 @@ export default function Testimonial() {
   return (
     <>
       <Swiper
-        spaceBetween={50}
+        spaceBetween={30}
         effect={"fade"}
         navigation={true}
         pagination={{
