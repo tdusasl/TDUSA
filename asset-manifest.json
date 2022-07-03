@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TDUSA/static/css/main.0af98418.css",
+    "main.css": "/TDUSA/static/css/main.55ba7793.css",
     "main.js": "/TDUSA/static/js/main.9eb1504b.js",
     "static/js/787.652e0442.chunk.js": "/TDUSA/static/js/787.652e0442.chunk.js",
     "index.html": "/TDUSA/index.html",
-    "main.0af98418.css.map": "/TDUSA/static/css/main.0af98418.css.map",
+    "main.55ba7793.css.map": "/TDUSA/static/css/main.55ba7793.css.map",
     "main.9eb1504b.js.map": "/TDUSA/static/js/main.9eb1504b.js.map",
     "787.652e0442.chunk.js.map": "/TDUSA/static/js/787.652e0442.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0af98418.css",
+    "static/css/main.55ba7793.css",
     "static/js/main.9eb1504b.js"
   ]
 }
