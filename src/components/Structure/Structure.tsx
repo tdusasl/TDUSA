@@ -1,7 +1,9 @@
 import "./Structure.css";
 import Papa from "papaparse";
 import { useState, useEffect } from "react";
-import profile from '../../assets/profile.jpg';
+
+import { useNav } from "../../hooks/useNav";
+
 
 
 const Structure = () => {
@@ -12,6 +14,7 @@ const Structure = () => {
   const patrons = process.env.REACT_APP_PATRONS?.split(',')!;
   const monitoringCommittee1 = process.env.REACT_APP_MONITORING_COMMITEE_1?.split(',')!;
   const monitoringCommittee2 = process.env.REACT_APP_MONITORING_COMMITEE_2?.split(',')!;
+  const structureRef = useNav("Structure");
   const fetchCommittee = () => {
     Papa.parse(committeeUri, {
       download: true,
@@ -31,7 +34,8 @@ const Structure = () => {
 
   return (
     (executiveCommittee) &&
-    <div id='structureContainer' className="structureContainer">
+
+    <div ref={structureRef} id='structureContainer' className="structureContainer">
       <h1>Structure</h1>
       <div className="header"> Patrons
         <div className="committee">
@@ -46,6 +50,7 @@ const Structure = () => {
               <div>{item}</div>
 
             </div>
+
           ))}
         </div>
       </div>

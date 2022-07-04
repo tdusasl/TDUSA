@@ -2,6 +2,7 @@ import Papa from "papaparse";
 import { useEffect, useState } from "react";
 import {VerticalTimeline,VerticalTimelineElement,} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { useNav } from "../../hooks/useNav";
 import './Events.css'
 
 const Events = () => {
@@ -9,6 +10,8 @@ const Events = () => {
   const eventsUri = process.env.REACT_APP_EVENTS!;
   const [numberOfEventsToDisplay, setNumberOfEventsToDisplay] = useState<number>(5);
   events.slice(0, 10);
+  const eventsRef = useNav("Events");
+
 
   const fetchEvents = () => {
     Papa.parse(eventsUri, {
@@ -31,7 +34,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div id='eventsContainer'>
+    <div ref={eventsRef} id='eventsContainer'>
       <h1>Events</h1>
       <div></div>
       <VerticalTimeline 

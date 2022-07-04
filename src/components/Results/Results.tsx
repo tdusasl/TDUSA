@@ -17,7 +17,11 @@ import FormHelperText from "@mui/material/FormHelperText";
 import { useState, useEffect } from "react";
 
 const Results = () => {
-  const resultUri = process.env.REACT_APP_RESULTS!;
+  const bioResultUri = process.env.REACT_APP_RESULTS_BIO!;
+  const mathsResultUri = process.env.REACT_APP_RESULTS_MATHS!;
+  const commerceResultUri = process.env.REACT_APP_RESULTS_COMMERCE!;
+  const technologyResultUri = process.env.REACT_APP_RESULTS_TECHNOLOGY!;
+  const artsResultUri = process.env.REACT_APP_RESULTS_ARTS!;
   const [result, setResult] = useState<Result["data"]>();
   const [open, setOpen] = useState(false);
   const [stream, setStream] = useState("");
@@ -80,7 +84,27 @@ const Results = () => {
   }
 
   const fetchResults = () => {
-    Papa.parse(resultUri, {
+    var uri ='';
+    switch (stream) {
+      case "Bio":
+        uri = bioResultUri;
+        break;
+      case "Maths":
+        uri = mathsResultUri;
+        break;
+      case "Commerce":
+        uri = commerceResultUri;
+        break;
+      case "Arts":
+        uri = artsResultUri;
+        break;
+      case "Technology":
+        uri = technologyResultUri;
+        break;
+      default:
+        window.alert("Please select a stream");
+    }
+    Papa.parse(uri, {
       download: true,
       header: true,
       step: function (row: Result, parser) {
