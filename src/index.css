@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&family=Poppins&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,7 +11,8 @@ body {
 :root {
   --color-primary: #0b111e;
   --color-secondary: #61dafb;
-  
+  --font-primary: 'Caudex', serif;
+  --font-secondary:'Poppins', sans-serif; 
 }
 
 code {

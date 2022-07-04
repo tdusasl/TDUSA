@@ -17,7 +17,8 @@ import Testimonial from "./components/Testimonial/Testimonial";
 import NavProvider from "./context/NavContext";
 import Results from "./components/Results/Results";
 import { ThemeContext } from "./context/ThemeContext";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
+import Top from "./components/Top/Top";
+
 const override: CSSProperties = {
   margin: "0 auto",
   borderColor: "red",
@@ -30,7 +31,7 @@ const override: CSSProperties = {
 function App() {
   let [loading, setLoading] = useState(true);
   const color = "#000000";
-  const { theme,setTheme } = useContext(ThemeContext);
+  const { theme} = useContext(ThemeContext);
 
   const particlesInit = async (main: Engine) => {
     await loadFull(main);
@@ -40,12 +41,7 @@ function App() {
     return Promise.resolve();
   };
 
-  const switchToLightMode = () => {
-    setTheme("light");
-  };
-  const switchToDarkMode = () => {
-    setTheme("dark");
-  };
+
 
 
   return (
@@ -55,15 +51,7 @@ function App() {
       }
     >
       <NavProvider>
-        <div className="themeIconContainer">
-         {theme==="light"&& <div onClick={switchToDarkMode}>
-            <MdDarkMode />
-          </div>}
-          {theme==="dark"&& <div onClick={switchToLightMode}>
-            <MdLightMode />
-          </div>}
-        </div>
-
+        <Top/>
         <Particles
           className="particles"
           id="tsparticles"

@@ -1,15 +1,14 @@
 import Typewriter from "typewriter-effect";
+import { useNav } from "../../hooks/useNav";
 import "./Home.css";
 
 const Home = () => {
-  const history = process.env.REACT_APP_HIST!;
-  const excellence = process.env.REACT_APP_25_YEAR!;
   const summary = process.env.REACT_APP_SUMMARY!;
-  const functions = process.env.REACT_APP_FUNCTION!;
+  const functions = process.env.REACT_APP_FUNCTIONS!;
+  const homeRef = useNav("Home");
 
-  
   return (
-    <div id="homeContainer">
+    <div ref={homeRef} id="homeContainer">
       <div>
         <div className="content">
           <h1>Home</h1>
@@ -31,11 +30,26 @@ const Home = () => {
             }}
           />
         </div>
-        <div className="history">
-          <p>{history}</p>
+        <div className="introduction">
+          <p>
+            Trincomalee District University Students’ Association is a
+            non-profitable public organization run by the undergraduates who
+            were selected to university from Trincomalee from various streams
+            such as Physical science, Biological science, Commerce, Arts, Bio
+            technology and Engineering technology.
+          </p>
         </div>
-        <div className="excellence">
-          <p>{excellence}</p>
+        <div className="goal">
+          <p>
+            Our main goal is to uplift the educational standards of the students
+            of Trincomalee district. And along with education we also take care
+            in social and environmental developing activities. Our union is
+            being an enormously active as well as a rapidly growing
+            socialwell-wishing association now a days. We are conducting about
+            25 projects annually. Passing 700 members over 25 years, our
+            organization has made a sustainable development iall the activities
+            and had earned a prominent fame around our society.
+          </p>
         </div>
       </div>
     </div>

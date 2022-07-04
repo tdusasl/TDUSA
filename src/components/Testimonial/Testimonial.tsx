@@ -22,7 +22,6 @@ export default function Testimonial() {
         navigation={true}
         pagination={{
           clickable: true,
-            el: ".swiper-pagination",
         }}
         modules={[EffectFade, Navigation, Pagination]}
         className="mySwiper"

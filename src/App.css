@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 
 .App {
   margin: 0;
   text-align: center;
   background-color: var(--color-primary);
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-primary);
 }
 .particles{
   position: absolute;
@@ -54,10 +53,3 @@ a {
   text-decoration: none;
 }
 
-.themeIconContainer{
-  display: flex;
-  justify-content: flex-end;
-  font-size: 2rem;
-  gap: 2rem;
-  margin-right: 50px;
-}
