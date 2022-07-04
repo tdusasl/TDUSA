@@ -10,8 +10,6 @@ const PastPapers = () => {
             download: true,
             header: true,
             complete: function (results) {
-                
-                console.log("fgrf",results.data);
                 setPastPapers(results.data);
             }
         });
@@ -19,15 +17,14 @@ const PastPapers = () => {
 
     useEffect(() => {
         fetchPastPapers();
-        console.log(pastPapers);
         // eslint-disable-next-line
     },[]);
 
     return (
-        <div>
+        <div id='paperContainer'>
         <h1>Past Papers</h1>
-        {pastPapers.map((item: any) => (
-            <div>{item.stream}</div>
+        {pastPapers.map((item: any,key:any) => (
+            <div key={key}>{item.stream}</div>
         ))}
         </div>
     );

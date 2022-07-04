@@ -9,13 +9,13 @@ const Structure = () => {
   const auditor = process.env.REACT_APP_AUDITOR!;
   const legalAdvisor = process.env.REACT_APP_LEGAL_ADVISOR!;
   const patrons = process.env.REACT_APP_PATRONS?.split(',')!;
-  const monitoringCommittee = process.env.REACT_APP_MONITORING_COMMITEE_1?.split(',')!;
+  const monitoringCommittee1 = process.env.REACT_APP_MONITORING_COMMITEE_1?.split(',')!;
+  const monitoringCommittee2 = process.env.REACT_APP_MONITORING_COMMITEE_2?.split(',')!;
   const fetchCommittee = () => {
     Papa.parse(committeeUri, {
       download: true,
       header: true,
       complete: function (results) {
-        console.log(results.data);
         setExecutiveCommittee( results.data );      
       },
     });
@@ -30,19 +30,19 @@ const Structure = () => {
 
   return (
     (executiveCommittee) &&
-    <div>
+    <div id='structureContainer'>
       Structure
       <div>Patrons
         <div>
-          {patrons.map((item: any) => (
-            <div>{item}</div>
+          {patrons.map((item: any,key:any) => (
+            <div key={key}>{item}</div>
           ))}
         </div>
       </div>
       <div>
         <div>Executive Committee</div>
-        {executiveCommittee.map((item: any) => (
-          <div>
+        {executiveCommittee.map((item: any,key:any) => (
+          <div key={key}>
           <div>{item.name}</div>
           {/* <img
                 width="80px"
@@ -56,8 +56,13 @@ const Structure = () => {
       </div>
       <div>Monitoring Committee
         <div>
-          {monitoringCommittee.map((item: any) => (
-            <div>{item}</div>
+          {monitoringCommittee1.map((item: any,key:any) => (
+            <div key={key}>{item}</div>
+          ))}
+        </div>
+        <div>
+          {monitoringCommittee2.map((item: any,key:any) => (
+            <div key={key}>{item}</div>
           ))}
         </div>
       </div>

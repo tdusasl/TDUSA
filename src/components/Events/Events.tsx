@@ -1,10 +1,8 @@
 import Papa from "papaparse";
 import { useEffect, useState } from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import {VerticalTimeline,VerticalTimelineElement,} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import './Events.css'
 
 const Events = () => {
   const [events, setEvents] = useState<any>([]);
@@ -17,7 +15,6 @@ const Events = () => {
       download: true,
       header: true,
       complete: function (results) {
-        console.log(results.data);
         setEvents(results.data);
       },
     });
@@ -30,28 +27,34 @@ const Events = () => {
 
   useEffect(() => {
     fetchEvents();
-    console.log(events);
     // eslint-disable-next-line
   }, []);
 
   return (
-    <div>
+    <div id='eventsContainer'>
       <h1>Events</h1>
       <div></div>
       <VerticalTimeline 
-      lineColor="rgb(0, 255,0 )"
+      lineColor="var(--color-secondary)"
       >
-        {events.slice(0,numberOfEventsToDisplay).map((item: any) => (
-          <VerticalTimelineElement
+        {events.slice(0,numberOfEventsToDisplay).map((item: any,key:any) => (
+          <VerticalTimelineElement key={key}
             className="vertical-timeline-element--work"
             contentStyle={{ background: "white", color: "#000" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
             // date="2011 - present"
             iconStyle={{
+<<<<<<< HEAD
               background: "black",
               color: "#fff",
               fontFamily: "Roboto",
               
+=======
+              background: "var(--color-primary)",
+              color: "var(--color-secondary)",
+              fontFamily: "Roboto",
+              backgroundColor: "var(--color-primary)",
+>>>>>>> 0f139962baf4454b06d1b66f868903b02a11a3f1
             }}
           >
             <h3 className="vertical-timeline-element-title">{item.name}</h3>
@@ -64,10 +67,15 @@ const Events = () => {
         ))}
 
         {/* <VerticalTimelineElement
-          iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
+         iconStyle={{
+          background: "var(--color-primary)",
+          color: "var(--color-secondary)",
+          fontFamily: "Roboto",
+          backgroundColor: "var(--color-primary)",
+        }}
         /> */}
       </VerticalTimeline>
-      <button onClick={showAllEvents}>Show more</button>
+      <button className="button" onClick={showAllEvents}>Show more</button>
 
     </div>
   );

@@ -1,7 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .App {
+  margin: 0;
   text-align: center;
+  background-color: var(--color-primary);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.particles{
+  position: absolute;
+
+  height: 500px;
+  width: 100%;
+  opacity: 0.5;
+}
+.App-light {
+  margin: 0;
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-family: 'Poppins', sans-serif;
 }
 .loader{
   width:500px;
@@ -10,10 +29,6 @@
   
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -21,19 +36,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
-  color: #61dafb;
+  color: var(--color-secondary);
 }
 
 @keyframes App-logo-spin {
@@ -43,4 +47,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.themeIconContainer{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+  gap: 2rem;
+  margin-right: 50px;
 }
