@@ -48,9 +48,10 @@ const Events = () => {
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
             // date="2011 - present"
             iconStyle={{
-              background: "rgb(33, 150, 243)",
+              background: "black",
               color: "#fff",
               fontFamily: "Roboto",
+              
             }}
           >
             <h3 className="vertical-timeline-element-title">{item.name}</h3>
