@@ -1,9 +1,8 @@
 import "./Structure.css";
 import Papa from "papaparse";
 import { useState, useEffect } from "react";
-
+import profile from "../../assets/img/profile/profile.png";
 import { useNav } from "../../hooks/useNav";
-
 
 
 const Structure = () => {
@@ -42,11 +41,12 @@ const Structure = () => {
           {patrons.map((item: any, key: any) => (
             <div key={key} >
 
-              {<img
+              <img
                 width="80px"
                 height="80px"
                 src={profile}
-              ></img>}
+                alt=""
+              />
               <div>{item}</div>
 
             </div>
@@ -66,11 +66,12 @@ const Structure = () => {
                 src={"//drive.google.com/uc" + item.photo.substring(29) }
               ></img> } */}
 
-            {<img
+            <img
               width="80px"
               height="80px"
               src={profile}
-            ></img>}
+              alt=""
+            />
 
             <div>{item.name}</div>
 
@@ -90,7 +91,8 @@ const Structure = () => {
                 width="80px"
                 height="80px"
                 src={profile}
-              ></img>
+                alt=""
+              />
               <div>{item}</div>
             </div>
           ))}
@@ -104,7 +106,8 @@ const Structure = () => {
                 width="80px"
                 height="80px"
                 src={profile}
-              ></img>
+                alt=""
+              />
               <div>{item}</div>
 
             </div>
@@ -115,11 +118,12 @@ const Structure = () => {
         <div className="header"> Auditor </div>
         <div className="committee">
           <div>
-            {<img
+            <img
               width="80px"
               height="80px"
               src={profile}
-            ></img>}
+              alt=""
+            />
 
             <div>{auditor}</div>
           </div>
@@ -130,11 +134,12 @@ const Structure = () => {
         <div className="header"> Legal Advisor </div>
         <div className="committee">
           <div >
-          {<img
+          <img
             width="80px"
             height="80px"
             src={profile}
-          ></img>}
+            alt=""
+          />
           <div>{legalAdvisor}</div>
         </div>
       </div>

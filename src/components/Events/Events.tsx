@@ -49,7 +49,6 @@ const Events = () => {
             iconStyle={{
               background: "var(--color-primary)",
               color: "var(--color-secondary)",
-              fontFamily: "Roboto",
               backgroundColor: "var(--color-primary)",
             }}
           >
