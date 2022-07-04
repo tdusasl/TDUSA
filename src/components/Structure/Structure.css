@@ -1,0 +1,48 @@
+.structureContainer{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header{
+    font-size: 24px
+}
+
+
+.committee{
+    display: flex;
+    justify-content: space-around;
+   margin: 10px;
+}
+
+.committee div img{
+    border-radius: 50%;
+    border:0.5rem solid rgba(149,195,233, 0.5);
+    box-shadow: rgba(149,195,233, 0.35) 0px 5px 15px;
+    
+}
+
+.monitorCommittee1{
+    display: flex;
+    justify-content: space-between;
+  
+   
+}
+.monitorCommittee1 div{
+    width: 200px;
+}
+.monitorCommittee1 div img{
+    border-radius: 50%;
+    border:0.8rem solid rgba(149,195,233, 0.5);
+}
+.monitorCommittee2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.monitorCommittee2 div{
+    width: 200px; 
+}
+.monitorCommittee2 div img{
+    border-radius: 50%;
+    border:0.5rem solid rgba(149,195,233, 0.5);
+}
