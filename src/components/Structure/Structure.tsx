@@ -9,7 +9,8 @@ const Structure = () => {
   const auditor = process.env.REACT_APP_AUDITOR!;
   const legalAdvisor = process.env.REACT_APP_LEGAL_ADVISOR!;
   const patrons = process.env.REACT_APP_PATRONS?.split(',')!;
-  const monitoringCommittee = process.env.REACT_APP_MONITORING_COMMITEE_1?.split(',')!;
+  const monitoringCommittee1 = process.env.REACT_APP_MONITORING_COMMITEE_1?.split(',')!;
+  const monitoringCommittee2 = process.env.REACT_APP_MONITORING_COMMITEE_2?.split(',')!;
   const fetchCommittee = () => {
     Papa.parse(committeeUri, {
       download: true,
@@ -55,7 +56,12 @@ const Structure = () => {
       </div>
       <div>Monitoring Committee
         <div>
-          {monitoringCommittee.map((item: any,key:any) => (
+          {monitoringCommittee1.map((item: any,key:any) => (
+            <div key={key}>{item}</div>
+          ))}
+        </div>
+        <div>
+          {monitoringCommittee2.map((item: any,key:any) => (
             <div key={key}>{item}</div>
           ))}
         </div>

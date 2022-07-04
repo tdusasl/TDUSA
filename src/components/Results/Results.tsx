@@ -57,6 +57,7 @@ const Results = () => {
   ];
 
   const handleClose = () => {
+    setResult(undefined);
     setOpen(false);
   };
   interface Result {
