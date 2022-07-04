@@ -15,7 +15,6 @@ const Structure = () => {
       download: true,
       header: true,
       complete: function (results) {
-        console.log(results.data);
         setExecutiveCommittee( results.data );      
       },
     });
@@ -34,15 +33,15 @@ const Structure = () => {
       Structure
       <div>Patrons
         <div>
-          {patrons.map((item: any) => (
-            <div>{item}</div>
+          {patrons.map((item: any,key:any) => (
+            <div key={key}>{item}</div>
           ))}
         </div>
       </div>
       <div>
         <div>Executive Committee</div>
-        {executiveCommittee.map((item: any) => (
-          <div>
+        {executiveCommittee.map((item: any,key:any) => (
+          <div key={key}>
           <div>{item.name}</div>
           {/* <img
                 width="80px"
@@ -56,8 +55,8 @@ const Structure = () => {
       </div>
       <div>Monitoring Committee
         <div>
-          {monitoringCommittee.map((item: any) => (
-            <div>{item}</div>
+          {monitoringCommittee.map((item: any,key:any) => (
+            <div key={key}>{item}</div>
           ))}
         </div>
       </div>

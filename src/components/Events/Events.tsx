@@ -15,7 +15,6 @@ const Events = () => {
       download: true,
       header: true,
       complete: function (results) {
-        console.log(results.data);
         setEvents(results.data);
       },
     });
@@ -28,7 +27,6 @@ const Events = () => {
 
   useEffect(() => {
     fetchEvents();
-    console.log(events);
     // eslint-disable-next-line
   }, []);
 
@@ -39,8 +37,8 @@ const Events = () => {
       <VerticalTimeline 
       lineColor="var(--color-secondary)"
       >
-        {events.slice(0,numberOfEventsToDisplay).map((item: any) => (
-          <VerticalTimelineElement
+        {events.slice(0,numberOfEventsToDisplay).map((item: any,key:any) => (
+          <VerticalTimelineElement key={key}
             className="vertical-timeline-element--work"
             contentStyle={{ background: "white", color: "#000" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}

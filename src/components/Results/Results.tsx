@@ -24,11 +24,9 @@ const Results = () => {
   const [indexNo, setIndexNo] = useState("");
 
   const handleStreamChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     setStream(event.target.value);
   };
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     setIndexNo(event.target.value);
   };
 
@@ -85,21 +83,17 @@ const Results = () => {
       download: true,
       header: true,
       step: function (row: Result, parser) {
-        // console.log("Row:", row.data);
         if (row.data.IndexNo === indexNo) {
-          console.log("Row:", row.data);
           setResult(row.data);
           parser.abort();
         }
       },
       complete: function (results) {
         console.log("Fetched all Data");
-        // console.log(results.data);
       },
     });
   };
   useEffect(() => {
-    console.log(result);
     // eslint-disable-next-line
   }, []);
 

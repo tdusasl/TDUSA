@@ -8,9 +8,8 @@
     font-size: 40px;
     background-color: #151c28;
 }
-.particles{
-    height: 500px;
-    position: absolute;
-    width: 100%;
-    opacity: 0.5;
+
+
+.content{
+    z-index: 99999;
 }

@@ -1,6 +1,6 @@
-import React, { useState,ReactNode} from 'react';
+import { useState,ReactNode, createContext} from 'react';
 
-export const NavContext = React.createContext(null as any);
+export const NavContext = createContext(null as any);
 interface Props {
     children?: ReactNode
     // any props that come into the component

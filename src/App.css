@@ -4,8 +4,22 @@
 .App {
   margin: 0;
   text-align: center;
-  background-color: #0b111e;
+  background-color: var(--color-primary);
   color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.particles{
+  position: absolute;
+
+  height: 500px;
+  width: 100%;
+  opacity: 0.5;
+}
+.App-light {
+  margin: 0;
+  text-align: center;
+  background-color: white;
+  color: black;
   font-family: 'Poppins', sans-serif;
 }
 .loader{
@@ -38,4 +52,12 @@
 
 a {
   text-decoration: none;
+}
+
+.themeIconContainer{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+  gap: 2rem;
+  margin-right: 50px;
 }
