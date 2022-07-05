@@ -4,7 +4,6 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import "./Results.css";
@@ -12,8 +11,8 @@ import Papa from "papaparse";
 import Input from "@mui/material/Input";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import FormHelperText from "@mui/material/FormHelperText";
+// import OutlinedInput from "@mui/material/OutlinedInput";
+// import FormHelperText from "@mui/material/FormHelperText";
 import { useState, useEffect } from "react";
 
 const Results = () => {

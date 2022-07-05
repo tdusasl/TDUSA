@@ -1,17 +1,33 @@
 import Papa from "papaparse";
 import { useEffect, useState } from "react";
-import {VerticalTimeline,VerticalTimelineElement,} from "react-vertical-timeline-component";
+import event from "../../assets/img/event.png";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useNav } from "../../hooks/useNav";
-import './Events.css'
+import "./Events.css";
 
 const Events = () => {
   const [events, setEvents] = useState<any>([]);
   const eventsUri = process.env.REACT_APP_EVENTS!;
-  const [numberOfEventsToDisplay, setNumberOfEventsToDisplay] = useState<number>(5);
+  const [numberOfEventsToDisplay, setNumberOfEventsToDisplay] =
+    useState<number>(5);
+  const [open, setOpen] = useState<boolean>(false);
+  const [activeId, setActiveId] = useState(null);
   events.slice(0, 10);
   const eventsRef = useNav("Events");
 
+  const expand = {
+    height: "400px",
+  };
+
+  const handleSetOpen = (key: any) => {
+    setOpen(!open);
+    setActiveId(key);
+    console.log(key);
+  };
 
   const fetchEvents = () => {
     Papa.parse(eventsUri, {
@@ -23,10 +39,10 @@ const Events = () => {
     });
   };
   const showAllEvents = () => {
-    if(numberOfEventsToDisplay+5<events.length){
-    setNumberOfEventsToDisplay(numberOfEventsToDisplay + 5);
-  }
-  }
+    if (numberOfEventsToDisplay + 5 < events.length) {
+      setNumberOfEventsToDisplay(numberOfEventsToDisplay + 5);
+    }
+  };
 
   useEffect(() => {
     fetchEvents();
@@ -34,35 +50,64 @@ const Events = () => {
   }, []);
 
   return (
-    <div ref={eventsRef} id='eventsContainer'>
+    <div ref={eventsRef} id="eventsContainer">
       <h1>Events</h1>
       <div></div>
       <div className="timeline">
-      <VerticalTimeline
-      lineColor="var(--color-secondary)"
-      >
-        {events.slice(0,numberOfEventsToDisplay).map((item: any,key:any) => (
-          <VerticalTimelineElement key={key}
-            className="vertical-timeline-element--work"
-            contentStyle={{ background: "white", color: "#000" }}
-            contentArrowStyle={{ border:"none",borderRight:"none",height:"2px",position:"absolute",width:"6%",backgroundColor:"var(--color-secondary)"}}
-            // date="2011 - present"
-            iconStyle={{
-              background: "var(--color-primary)",
-              color: "var(--color-secondary)",
-              backgroundColor: "var(--color-primary)",
-            }}
-          >
-            <h3 className="vertical-timeline-element-title">{item.name}</h3>
-            {/* <img
+        <VerticalTimeline lineColor="var(--color-secondary)">
+          {events
+            .slice(0, numberOfEventsToDisplay)
+            .map((item: any, key: any) => (
+              <VerticalTimelineElement
+                key={key}
+                className="vertical-timeline-element--work"
+                contentStyle={{ background: "white", color: "#000" }}
+                contentArrowStyle={{
+                  border: "none",
+                  borderRight: "none",
+                  height: "2px",
+                  position: "absolute",
+                  width: "6%",
+                  backgroundColor: "var(--color-secondary)",
+                }}
+                // date="2011 - present"
+                iconStyle={{
+                  background: "var(--color-primary)",
+                  color: "var(--color-secondary)",
+                  backgroundColor: "var(--color-primary)",
+                }}
+              >
+                <div
+                  className={"container expand"}
+                  style={open && activeId === key ? expand : {}}
+                >
+                  <div className="upper">
+                    <h3 className="vertical-timeline-element-title">
+                      {item.name}
+                    </h3>
+                    <img width="300px" src={event} alt="" />
+                    <div>
+                    <button onClick={() => handleSetOpen(key)}>
+                      Show more
+                    </button>
+                    </div>
+                  </div>
+                  {open && (
+                    <div className="lower">
+                      <h3>Expansion</h3>
+                    </div>
+                  )}
+
+                  {/* <img
                   width="300px"
                   src={"//drive.google.com/uc" + item.photo.substring(29)}
                   alt=""
                 /> */}
-          </VerticalTimelineElement>
-        ))}
+                </div>
+              </VerticalTimelineElement>
+            ))}
 
-        {/* <VerticalTimelineElement
+          {/* <VerticalTimelineElement
          iconStyle={{
           background: "var(--color-primary)",
           color: "var(--color-secondary)",
@@ -70,10 +115,11 @@ const Events = () => {
           backgroundColor: "var(--color-primary)",
         }}
         /> */}
-      </VerticalTimeline>
+        </VerticalTimeline>
       </div>
-      <button className="button" onClick={showAllEvents}>Show more</button>
-
+      <button className="button" onClick={showAllEvents}>
+        Show more
+      </button>
     </div>
   );
 };
