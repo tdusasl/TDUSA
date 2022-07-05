@@ -3,8 +3,6 @@ import { useNav } from "../../hooks/useNav";
 import "./Home.css";
 
 const Home = () => {
-  const summary = process.env.REACT_APP_SUMMARY!;
-  const functions = process.env.REACT_APP_FUNCTIONS!;
   const homeRef = useNav("Home");
 
   return (

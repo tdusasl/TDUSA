@@ -46,3 +46,23 @@
     border-radius: 50%;
     border:0.5rem solid rgba(149,195,233, 0.5);
 }
+
+@media screen and (max-width:576px){
+    .monitorCommittee1{
+        flex-direction: column;
+    }
+    .monitorCommittee2{
+        flex-direction: column;
+    }
+    .committee{
+        flex-direction: column;
+    }
+    .monitorCommittee1 div{
+        width: 100%;
+    }
+    .monitorCommittee2 div{
+        width: 100%;
+    }
+
+
+}

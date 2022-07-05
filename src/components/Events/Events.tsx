@@ -37,14 +37,15 @@ const Events = () => {
     <div ref={eventsRef} id='eventsContainer'>
       <h1>Events</h1>
       <div></div>
-      <VerticalTimeline 
+      <div className="timeline">
+      <VerticalTimeline
       lineColor="var(--color-secondary)"
       >
         {events.slice(0,numberOfEventsToDisplay).map((item: any,key:any) => (
           <VerticalTimelineElement key={key}
             className="vertical-timeline-element--work"
             contentStyle={{ background: "white", color: "#000" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+            contentArrowStyle={{ border:"none",borderRight:"none",height:"2px",position:"absolute",width:"6%",backgroundColor:"var(--color-secondary)"}}
             // date="2011 - present"
             iconStyle={{
               background: "var(--color-primary)",
@@ -70,6 +71,7 @@ const Events = () => {
         }}
         /> */}
       </VerticalTimeline>
+      </div>
       <button className="button" onClick={showAllEvents}>Show more</button>
 
     </div>

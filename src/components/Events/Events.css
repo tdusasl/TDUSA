@@ -13,3 +13,15 @@
     color: var(--color-primary);
     font-size: large;
 }
+
+
+@media screen and (max-width:576px){
+    .vertical-timeline-element--work .vertical-timeline-element-content {
+        width: 70%;
+    }
+    .timeline{
+        margin-left: 20px;
+    
+    }
+
+}

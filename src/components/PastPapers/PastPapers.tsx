@@ -1,5 +1,5 @@
 import Papa from "papaparse";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import { useNav } from "../../hooks/useNav";
 
 const PastPapers = () => {
