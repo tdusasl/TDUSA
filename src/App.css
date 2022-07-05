@@ -9,10 +9,10 @@
 }
 .particles{
   position: absolute;
-
-  height: 500px;
+  height: 300px;
   width: 100%;
   opacity: 0.5;
+  margin-top: 80px;
 }
 .App-light {
   margin: 0;

@@ -16,6 +16,7 @@ const Top = () => {
     <div className="top">
       <div></div>
       <div className="top_logo">
+        <div className="top-title">TDUSA</div>
         <img src={logo} alt="" />
       </div>
       <div className="themeIconContainer">

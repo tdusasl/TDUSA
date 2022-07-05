@@ -70,11 +70,11 @@ const Events = () => {
                   width: "6%",
                   backgroundColor: "var(--color-secondary)",
                 }}
-                // date="2011 - present"
+                date="2011 - present"
                 iconStyle={{
                   background: "var(--color-primary)",
-                  color: "var(--color-secondary)",
                   backgroundColor: "var(--color-primary)",
+                  zIndex: "1",
                 }}
               >
                 <div

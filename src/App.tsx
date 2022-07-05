@@ -51,7 +51,7 @@ function App() {
       }
     >
       <NavProvider>
-        <Top/>
+        
         <Particles
           className="particles"
           id="tsparticles"
@@ -131,6 +131,7 @@ function App() {
             detectRetina: true,
           }}
         />
+        <Top/>
         {/* <div className="loader">
         <DotLoader
           color={color}
@@ -140,7 +141,6 @@ function App() {
         />
       </div> */}
         <Header />
-        <Results />
         <Home />
         <Events />
         <Stats />

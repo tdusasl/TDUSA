@@ -16,13 +16,24 @@
 }
 .top>div{
     height: 7%;
-    width: 12%;
+    width: 25%;
 
 }
-.top>div:nth-child(2){
+.top-title{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10%;
+}
+/* .top>div:nth-child(2){
     background-color: #95C3E9;
     border-radius:0 0 15% 15%;
-}
-.top>div:nth-child(3){
-    margin-top: 1.5%;
+} */
+
+/* .top>div:nth-child(2){
+
+} */
+
+.themeIconContainer>div{
+    margin-top: 10%;
 }
