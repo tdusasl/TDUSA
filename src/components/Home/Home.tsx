@@ -1,5 +1,6 @@
 import Typewriter from "typewriter-effect";
 import { useNav } from "../../hooks/useNav";
+import Donate from "../Donate/Donate";
 import Results from "../Results/Results";
 import "./Home.css";
 
@@ -28,8 +29,11 @@ const Home = () => {
             }}
           />
         </div>
+        <div className="content-title">
+          <p>ABOUT US</p>
+          <div></div>
+        </div>
         <div className="content">
-
           <div className="results">
             <Results />
           </div>
@@ -60,7 +64,9 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="donate">Donate</div>
+          <div className="donate">
+            <Donate />
+          </div>
         </div>
       </div>
     </div>

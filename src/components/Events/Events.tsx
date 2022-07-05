@@ -13,7 +13,7 @@ const Events = () => {
   const [events, setEvents] = useState<any>([]);
   const eventsUri = process.env.REACT_APP_EVENTS!;
   const [numberOfEventsToDisplay, setNumberOfEventsToDisplay] =
-    useState<number>(5);
+    useState<number>(3);
   const [open, setOpen] = useState<boolean>(false);
   const [activeId, setActiveId] = useState(null);
   events.slice(0, 10);
@@ -39,8 +39,8 @@ const Events = () => {
     });
   };
   const showAllEvents = () => {
-    if (numberOfEventsToDisplay + 5 < events.length) {
-      setNumberOfEventsToDisplay(numberOfEventsToDisplay + 5);
+    if (numberOfEventsToDisplay + 3 < events.length) {
+      setNumberOfEventsToDisplay(numberOfEventsToDisplay + 3);
     }
   };
 
@@ -70,7 +70,7 @@ const Events = () => {
                   width: "6%",
                   backgroundColor: "var(--color-secondary)",
                 }}
-                date="2011 - present"
+                // date="2011 - present"
                 iconStyle={{
                   background: "var(--color-primary)",
                   backgroundColor: "var(--color-primary)",

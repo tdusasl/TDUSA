@@ -1,32 +1,45 @@
+.text-content {
+  /* background-color: aqua; */
+  width: 50%;
+  height: 100%;
+}
+.goal {
+}
+.introduction {
+}
+.results {
+  width: 25%;
+  height: 100%;
+}
+.donate {
+  width: 25%;
+  height: 100%;
+}
+.typewriter {
+  font-size: 2rem;
+}
+.typewriter > div:nth-child(2) {
+  font-size: 4rem;
+}
+.content-title {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left: 7.5%;
+}
+.content-title > p {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 2%;
+  height: 10px;
+}
+.content-title > div:nth-child(2) {
+  width: 50%;
+  height: 1px;
+  background: #95c3e9;
+}
 
-.text-content{
-    /* background-color: aqua; */
-    width: 50%;
-    height: 100%;
-}
-.goal{
-
-}
-.introduction{
-}
-.results{
-    width: 25%;
-    height: 100%;
-}
-.donate{
-    width: 25%;
-    height: 100%;
-}
-.typewriter{
-    font-size: 2rem;
-
-}
-.typewriter>div:nth-child(2){
-    font-size: 4rem;
-}
-
-
-.content{
-    z-index: 99999;
-    display: flex;
+.content {
+  z-index: 99999;
+  display: flex;
 }

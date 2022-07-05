@@ -66,3 +66,21 @@
 
 
 }
+
+.content-title {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 7.5%;
+  }
+  .content-title > p {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 2%;
+    height: 10px;
+  }
+  .content-title > div:nth-child(2) {
+    width: 50%;
+    height: 1px;
+    background: #95c3e9;
+  }

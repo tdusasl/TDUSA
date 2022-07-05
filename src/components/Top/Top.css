@@ -3,10 +3,10 @@
   }
 
 .top img{
-    margin-top: 10%;
-    width: 70%;
+    margin-top: 5%;
+    width: 20%;
     height: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 .top{
     display: flex;
