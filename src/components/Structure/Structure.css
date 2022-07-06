@@ -1,126 +1,169 @@
-.structureContainer{
-    width: 80%;
-    margin: 0 auto;
+.structureContainer {
+  width: 80%;
+  margin: 0 auto;
 }
 .content-title {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left: 7.5%;
+}
+.content-title > p {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 2%;
+  height: 10px;
+}
+.content-title > div:nth-child(2) {
+  width: 30%;
+  height: 1px;
+  background: #95c3e9;
+}
+
+.header {
+  font-size: 24px;
+}
+
+.committee {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.committee div img {
+  border-radius: 50%;
+  border: 0.5rem solid rgba(149, 195, 233, 0.5);
+  box-shadow: rgba(149, 195, 233, 0.35) 0px 5px 15px;
+}
+
+.monitorCommittee1 {
+  display: flex;
+  justify-content: space-between;
+}
+.monitorCommittee1 div {
+  width: 200px;
+}
+.monitorCommittee1 div img {
+  border-radius: 50%;
+  border: 0.8rem solid rgba(149, 195, 233, 0.5);
+}
+.monitorCommittee2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.monitorCommittee2 div {
+  width: 200px;
+}
+.monitorCommittee2 div img {
+  border-radius: 50%;
+  border: 0.5rem solid rgba(149, 195, 233, 0.5);
+}
+
+.structure-card {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 90%;
+  font-size: 2rem;
+}
+.structure-card > div {
+  width: 30%;
+}
+.structure-card > div > div {
+  margin: 0 auto;
+  border-radius: 40px;
+  background-color: white;
+  height: 400px;
+  width: 70%;
+  padding-top: 50px;
+  color: black;
+}
+.structure-card > div > div > div:nth-child(1) {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 4rem;
+  margin-bottom: 50px;
+}
+.structure-card > div:nth-child(1) {
+  border-style: none solid none none;
+}
+.structure-card > div:nth-child(2) {
+  border-style: none solid none none;
+}
+.structure-card > div > div > div:nth-child(3) {
+    margin-top: 50px;
+  }
+@media screen and (max-width: 576px) {
+  .monitorCommittee1 {
+    flex-direction: column;
+  }
+  .monitorCommittee2 {
+    flex-direction: column;
+  }
+  .committee {
+    flex-direction: column;
+  }
+  .monitorCommittee1 div {
+    width: 100%;
+  }
+  .monitorCommittee2 div {
+    width: 100%;
+  }
+  .structure-card {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    width: 90%;
+    font-size: 2rem;
+  }
+  .structure-card > div {
+    width: 90%;
+  }
+  .structure-card > div > div {
+    height: 250px;
+    padding-top: 20px;
+    font-size: 2rem;
+  }
+  .structure-card > div:nth-child(1) {
+    border-style: none;
+    margin-bottom: 20px;
+  }
+  .structure-card > div:nth-child(2) {
+    border-style: none;
+    margin-bottom: 20px;
+  }
+  .structure-card > div > div > div:nth-child(1) {
+    font-size: 4rem;
+    margin-bottom: 0px;
+  }
+  .structure-card > div > div > div:nth-child(3) {
+    margin-top: 10px;
+  }
+  .content-title {
+    width: 80%;
+    margin-left: 0;
+    margin :0 auto;
     margin-top: 50px;
     margin-bottom: 10px;
-    margin-left: 7.5%;
+  }
+  .content-title > div:nth-child(2) {
+    width: 100%;
+    height: 1px;
+    background: #95c3e9;
   }
   .content-title > p {
     font-size: 2rem;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     margin-top: 2%;
     height: 10px;
   }
-  .content-title > div:nth-child(2) {
-    width: 50%;
-    height: 1px;
-    background: #95c3e9;
-  }
-
-.header{
-    font-size: 24px
 }
-
-
-.committee{
-    display: flex;
-    justify-content: space-around;
-   margin: 10px;
-}
-
-.committee div img{
-    border-radius: 50%;
-    border:0.5rem solid rgba(149,195,233, 0.5);
-    box-shadow: rgba(149,195,233, 0.35) 0px 5px 15px;
-    
-}
-
-.monitorCommittee1{
-    display: flex;
-    justify-content: space-between;
-  
-   
-}
-.monitorCommittee1 div{
-    width: 200px;
-}
-.monitorCommittee1 div img{
-    border-radius: 50%;
-    border:0.8rem solid rgba(149,195,233, 0.5);
-}
-.monitorCommittee2{
-    display: flex;
-    justify-content: space-around;
-}
-
-.monitorCommittee2 div{
-    width: 200px; 
-}
-.monitorCommittee2 div img{
-    border-radius: 50%;
-    border:0.5rem solid rgba(149,195,233, 0.5);
-}
-
-.structure-card{
-    margin: 0 auto;
-    display: flex;
-    margin-top: 50px;
-    width: 90%;
-    font-size: 2rem;
-}
-.structure-card>div{
-    width: 30%;
-    
-}
-.structure-card>div>div{
-    margin: 0 auto;
-    border-radius: 40px;
-    background-color: white;
-    height: 400px;
-    width: 70%;
-    padding-top: 50px;
-    color: black;
-}
-.structure-card>div>div>div:nth-child(1){
-    margin: 0 auto;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    font-size: 4rem;
-    margin-bottom: 50px;
-}
-.structure-card>div:nth-child(1){
-    border-style: none solid none none;
-}
-.structure-card>div:nth-child(2){
-    border-style: none solid none none;
-}
-
-
-
-
-@media screen and (max-width:576px){
-    .monitorCommittee1{
-        flex-direction: column;
-    }
-    .monitorCommittee2{
-        flex-direction: column;
-    }
-    .committee{
-        flex-direction: column;
-    }
-    .monitorCommittee1 div{
-        width: 100%;
-    }
-    .monitorCommittee2 div{
-        width: 100%;
-    }
-
-
-}
-

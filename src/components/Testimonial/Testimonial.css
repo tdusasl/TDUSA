@@ -1,4 +1,5 @@
 .swiper {
+  margin-top: 30px;
   width: 60%;
   height: 36vh;
 }
@@ -31,12 +32,35 @@
 }
 .flex-cont {
   background-color: var(--color-primary);
-  /* margin: 10px; */
-  /* margin: 50px !important; */
   height: 22vh;
   padding: 20px 50px 50px 50px;
 }
 .slide {
   display: flex;
   justify-content: space-around;
+}
+
+@media screen and (max-width: 576px) {
+  .swiper {
+    width: 100%;
+    height: 76vh;
+  }
+  .slide {
+    flex-direction: column;
+    align-items: center;
+  }
+  .slide div img {
+    width: 250px;
+    height: 18vh;
+  }
+  .slide-container {
+    padding: 20px;
+  }
+  .slide-container>div:nth-child(2){
+    font-size: 1.5rem;
+  }
+  .flex-cont {
+    padding: 20px;
+    height: 65vh;
+  }
 }

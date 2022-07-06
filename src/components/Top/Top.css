@@ -37,3 +37,12 @@
 .themeIconContainer>div{
     margin-top: 10%;
 }
+@media screen and (max-width: 576px) {
+    .top img{
+        margin-top: 5%;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2%;
+    }
+
+}

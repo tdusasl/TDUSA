@@ -53,7 +53,7 @@ const Structure = () => {
                   <CountUp enableScrollSpy={true} scrollSpyDelay={1000} start={700} end={800} />+
                 </div>
               </div>
-              <div style={{marginTop:"50px"}}>MEMBERS</div>
+              <div >MEMBERS</div>
             </div>
           </div>
           <div>
@@ -66,7 +66,7 @@ const Structure = () => {
                   <CountUp enableScrollSpy={true} scrollSpyDelay={1000} start={0} end={25} />+
                 </div>
               </div>
-              <div style={{marginTop:"50px"}}>ANNUAL <br/> EVENTS</div>
+              <div >ANNUAL <br/> EVENTS</div>
             </div>
           </div>
           <div>
@@ -79,7 +79,7 @@ const Structure = () => {
                   <CountUp enableScrollSpy={true}  scrollSpyDelay={1000} start={2022} end={1995} />
                 </div>
               </div>
-              <div style={{marginTop:"50px"}}>SINCE</div>
+              <div >SINCE</div>
             </div>
           </div>
         </div>

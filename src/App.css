@@ -53,3 +53,8 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 576px) {
+  .particles{
+    height: 150px;
+  }
+}

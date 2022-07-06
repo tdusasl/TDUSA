@@ -40,11 +40,11 @@ const Header = () => {
               onClick={()=>handleClick('Paper','paperContainer')}>
                 <BsBook />
               </div>
-              <div 
+              {/* <div 
               className={activeNavLinkId === 'Paper' ? styles.activeClass : ''}
               onClick={()=>handleClick('Paper','paperContainer')}>
                 <BsBook />
-              </div>
+              </div> */}
             </div>
           </div>
         </nav>
