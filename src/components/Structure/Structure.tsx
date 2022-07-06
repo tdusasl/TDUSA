@@ -3,6 +3,10 @@ import Papa from "papaparse";
 import { useState, useEffect } from "react";
 import profile from "../../assets/img/profile/profile.png";
 import { useNav } from "../../hooks/useNav";
+import { MdOutlinePeopleAlt } from "react-icons/md";
+import { RiCalendarEventFill } from "react-icons/ri";
+import { TbHeartHandshake } from "react-icons/tb";
+import CountUp from "react-countup";
 
 const Structure = () => {
   const [executiveCommittee, setExecutiveCommittee] = useState<any>([]);
@@ -36,6 +40,48 @@ const Structure = () => {
         <div className="content-title">
           <p>STRUCTURE</p>
           <div></div>
+        </div>
+
+        <div className="structure-card">
+          <div>
+            <div>
+              <div>
+                <MdOutlinePeopleAlt style={{ marginTop: "17%" }} />
+              </div>
+              <div>
+                <div>
+                  <CountUp enableScrollSpy={true} scrollSpyDelay={1000} start={700} end={800} />+
+                </div>
+              </div>
+              <div style={{marginTop:"50px"}}>MEMBERS</div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <RiCalendarEventFill style={{ marginTop: "17%" }} />
+              </div>
+              <div>
+                <div>
+                  <CountUp enableScrollSpy={true} scrollSpyDelay={1000} start={0} end={25} />+
+                </div>
+              </div>
+              <div style={{marginTop:"50px"}}>ANNUAL <br/> EVENTS</div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <TbHeartHandshake style={{ marginTop: "17%" }} />
+              </div>
+              <div>
+                <div>
+                  <CountUp enableScrollSpy={true}  scrollSpyDelay={1000} start={2022} end={1995} />
+                </div>
+              </div>
+              <div style={{marginTop:"50px"}}>SINCE</div>
+            </div>
+          </div>
         </div>
 
         <div

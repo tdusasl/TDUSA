@@ -5,14 +5,14 @@ const Stats = () => {
   return (
     <div>
       <div className="content-title">
-        <p>ABOUT US</p>
+        <p>VIZHUTHUHAL</p>
         <div></div>
       </div>
       <div className="stats">
         <div className="stats-content">
           <div>
             <div>
-              <CountUp end={14} />+
+              <CountUp  enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={1000} end={14} />+
             </div>
             <div>STUDENTS</div>
           </div>
@@ -20,14 +20,14 @@ const Stats = () => {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div className="rupees">RS </div>
               <div>
-                <CountUp start={20001} end={30000} />+
+                <CountUp enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={1000} start={20001} end={30000} />+
               </div>
             </div>
             <div>MONTHLY DONATIONS</div>
           </div>
           <div>
             <div>
-              <CountUp start={0} end={10} />+
+              <CountUp enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={1000} start={0} end={10} />+
             </div>
             <div>DONORS</div>
           </div>
