@@ -67,16 +67,16 @@
 .structure-card{
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
     margin-top: 50px;
     width: 90%;
     font-size: 2rem;
 }
 .structure-card>div{
-    width: 25%;
+    width: 30%;
     
 }
 .structure-card>div>div{
+    margin: 0 auto;
     border-radius: 40px;
     background-color: white;
     height: 400px;
@@ -100,8 +100,6 @@
 .structure-card>div:nth-child(2){
     border-style: none solid none none;
 }
-
-
 
 
 

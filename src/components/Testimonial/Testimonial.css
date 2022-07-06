@@ -1,15 +1,42 @@
 .swiper {
-    width: 50%;
-    height: 40vh;
-  }
-  
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-  }
-  
+  width: 60%;
+  height: 36vh;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  padding: 30px;
+  padding-top: 0;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.slide div img {
+  margin-top: 20px;
+  width: 70%;
+  height: 70%;
+}
+.slide-container {
+  background-color: #7e8188;
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.slide-container>div:nth-child(2){
+  color:var(--color-primary);
+  font-size: 1.5rem;
+}
+.flex-cont {
+  background-color: var(--color-primary);
+  /* margin: 10px; */
+  /* margin: 50px !important; */
+  height: 22vh;
+  padding: 20px 50px 50px 50px;
+}
+.slide {
+  display: flex;
+  justify-content: space-around;
+}
