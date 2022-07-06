@@ -1,4 +1,5 @@
 .content-title {
+  width: 100%;
   margin-top: 50px;
   margin-bottom: 10px;
   margin-left: 7.5%;
@@ -11,14 +12,24 @@
   height: 10px;
 }
 .content-title > div:nth-child(2) {
-  width: 50%;
+  width: 30%;
   height: 1px;
   background: #95c3e9;
 }
 
+
 .stats {
   background-color: #202c3c;
   border-radius: 10px;
+  color:white;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.stats-light {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
   width: 85%;
   margin: 0 auto;
   margin-top: 20px;

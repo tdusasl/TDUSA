@@ -1,14 +1,19 @@
 import "./Stats.css";
 import CountUp from "react-countup";
 import hands from '../../assets/img/hands/hands.png'
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 const Stats = () => {
+  const { theme} = useContext(ThemeContext);
   return (
     <div>
       <div className="content-title">
         <p>VIZHUTHUHAL</p>
         <div></div>
       </div>
-      <div className="stats">
+      <div className={
+        theme === "dark" ? "stats" : theme === "light" ? "stats-light" : ""
+      }>
         <div className="stats-content">
           <div>
             <div>

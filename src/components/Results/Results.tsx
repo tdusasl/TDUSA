@@ -11,8 +11,6 @@ import Papa from "papaparse";
 import Input from "@mui/material/Input";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
-// import OutlinedInput from "@mui/material/OutlinedInput";
-// import FormHelperText from "@mui/material/FormHelperText";
 import { useState, useEffect } from "react";
 
 const Results = () => {
@@ -83,7 +81,7 @@ const Results = () => {
   }
 
   const fetchResults = () => {
-    var uri ='';
+    var uri = "";
     switch (stream) {
       case "Bio":
         uri = bioResultUri;
@@ -122,10 +120,9 @@ const Results = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Results works</h1>
+    <div className="result-container">
       <Button variant="outlined" onClick={handleClickOpen}>
-        Check your Results
+        Results
       </Button>
       <Dialog
         open={open}
@@ -137,10 +134,9 @@ const Results = () => {
           {"Select your stream and Enter Index number"}
         </DialogTitle>
         <DialogContent className="content">
-
-        <FormControl variant="standard">
+          <FormControl variant="standard">
             <TextField
-            style={{"margin": "10px"}}
+              style={{ margin: "10px" }}
               className="input"
               id="outlined-select-stream"
               select
@@ -156,7 +152,7 @@ const Results = () => {
               ))}
             </TextField>
           </FormControl>
-          <FormControl style={{"margin": "10px"}} variant="standard">
+          <FormControl style={{ margin: "10px" }} variant="standard">
             <InputLabel htmlFor="component-simple">Index Number</InputLabel>
             <Input
               id="component-simple"
@@ -164,7 +160,6 @@ const Results = () => {
               onChange={handleInputChange}
             />
           </FormControl>
-          
 
           <DialogContentText id="alert-dialog-description"></DialogContentText>
           {result && (
@@ -175,27 +170,59 @@ const Results = () => {
               <div>
                 <div>Name :</div> {result?.Name}
               </div>
-              <div><div>IndexNo :</div> {result?.IndexNo}</div>
-              {result?.Biology && <div><div>Biology :</div> {result?.Biology}</div>}
-              {result?.Chemistry && <div><div>Chemistry :</div> {result?.Chemistry}</div>}
-              {result?.Mathematics && (
-                <div><div>Mathematics :</div> {result?.Mathematics}</div>
+              <div>
+                <div>IndexNo :</div> {result?.IndexNo}
+              </div>
+              {result?.Biology && (
+                <div>
+                  <div>Biology :</div> {result?.Biology}
+                </div>
               )}
-              {result?.Physics && <div><div>Physics :</div> {result?.Physics}</div>}
-              {result?.Economics && <div><div>Economics :</div> {result?.Economics}</div>}
+              {result?.Chemistry && (
+                <div>
+                  <div>Chemistry :</div> {result?.Chemistry}
+                </div>
+              )}
+              {result?.Mathematics && (
+                <div>
+                  <div>Mathematics :</div> {result?.Mathematics}
+                </div>
+              )}
+              {result?.Physics && (
+                <div>
+                  <div>Physics :</div> {result?.Physics}
+                </div>
+              )}
+              {result?.Economics && (
+                <div>
+                  <div>Economics :</div> {result?.Economics}
+                </div>
+              )}
               {result?.BusinessStudies && (
-                <div><div>BusinessStudies :</div> {result?.BusinessStudies}</div>
+                <div>
+                  <div>BusinessStudies :</div> {result?.BusinessStudies}
+                </div>
               )}
               {result?.InformationTechnology && (
                 <div>
-                  <div>InformationTechnology :</div> {result?.InformationTechnology}
+                  <div>InformationTechnology :</div>{" "}
+                  {result?.InformationTechnology}
                 </div>
               )}
               {result?.Accounting && (
-                <div><div>Accounting :</div> {result?.Accounting}</div>
+                <div>
+                  <div>Accounting :</div> {result?.Accounting}
+                </div>
               )}
-              {result?.Rank && <div><div>Rank :</div> {result?.Rank}</div>}
-              <div><div>ZScore :</div>{result?.ZScore}</div>
+              {result?.Rank && (
+                <div>
+                  <div>Rank :</div> {result?.Rank}
+                </div>
+              )}
+              <div>
+                <div>ZScore :</div>
+                {result?.ZScore}
+              </div>
             </div>
           )}
         </DialogContent>

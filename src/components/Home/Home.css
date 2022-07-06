@@ -8,15 +8,19 @@
 .introduction {
 }
 .results {
+  margin-top: 10%;
   width: 25%;
-  height: 100%;
+  height: 200px;
 }
 .donate {
+  margin-top: 10%;
   width: 25%;
-  height: 100%;
+  height: 200px;
+
 }
 .typewriter {
   font-size: 2rem;
+  
 }
 .typewriter > div:nth-child(2) {
   font-size: 4rem;
@@ -49,4 +53,14 @@
     .typewriter > div:nth-child(2) {
         font-size: 2rem;
       }
+      .donate{
+        margin-top: 100%;
+      }
+      .results {
+        margin-top: 100%;
+      }
+      .text-content {
+        width: 60%;
+      }
+      
 }
