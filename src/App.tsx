@@ -103,13 +103,13 @@ function App() {
               },
               links: {
                 color: "#95c3e9",
-                distance: 120,
+                distance: 150,
                 enable: true,
                 opacity: 0.5,
                 width: 1,
               },
               collisions: {
-                enable: false,
+                enable: true,
               },
               move: {
                 direction: "none",

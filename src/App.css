@@ -9,7 +9,7 @@
 }
 .particles{
   position: absolute;
-  height: 300px;
+  height: 450px;
   width: 100%;
   opacity: 0.5;
   margin-top: 80px;
@@ -55,6 +55,6 @@ a {
 
 @media screen and (max-width: 576px) {
   .particles{
-    height: 150px;
+    height: 400px;
   }
 }

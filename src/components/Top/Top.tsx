@@ -18,7 +18,7 @@ const Top = () => {
     <div ref={topRef} id="topContainer" className="top">
       <div></div>
       <div className="top_logo">
-        <div className="top-title">TDUSA</div>
+        <div className="top-title">Trincomalee District University Students' Association</div>
         <img src={logo} alt="" />
       </div>
       <div className="themeIconContainer">
