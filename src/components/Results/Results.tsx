@@ -12,6 +12,8 @@ import Input from "@mui/material/Input";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import { useState, useEffect } from "react";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 const Results = () => {
   const bioResultUri = process.env.REACT_APP_RESULTS_BIO!;
@@ -22,9 +24,10 @@ const Results = () => {
   const [result, setResult] = useState<Result["data"]>();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>();
   const [stream, setStream] = useState("");
   const [indexNo, setIndexNo] = useState("");
-  const examYear = process.env.REACT_APP_EXAM_YEAR!
+  const examYear = process.env.REACT_APP_EXAM_YEAR!;
 
   const handleStreamChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setStream(event.target.value);
@@ -60,6 +63,7 @@ const Results = () => {
   ];
 
   const handleClose = () => {
+    setError(undefined)
     setResult(undefined);
     setOpen(false);
   };
@@ -83,6 +87,8 @@ const Results = () => {
   }
 
   const fetchResults = () => {
+    setResult(undefined);
+    setError(undefined)
     var uri = "";
     switch (stream) {
       case "Bio":
@@ -102,18 +108,27 @@ const Results = () => {
         break;
       default:
         window.alert("Please select a stream");
+        return;
     }
+    if(indexNo.length === 0) {
+      window.alert("Please enter an index number");
+      return;
+    }
+    setLoading(true);
     Papa.parse(uri, {
       download: true,
       header: true,
       step: function (row: Result, parser) {
         if (row.data.IndexNo === indexNo) {
           setResult(row.data);
+          setLoading(false);
           parser.abort();
         }
       },
       complete: function (results) {
+        setLoading(false);
         console.log("Fetched all Data");
+        setError("No results found for this index number");
       },
     });
   };
@@ -134,11 +149,11 @@ const Results = () => {
         aria-describedby="alert-dialog-description"
       >
         <div className="dialog-box">
-          <DialogTitle id="alert-dialog-title" style={{textAlign:"center"}}>
-            {"TDUSA Pilot Examination Results - "+examYear}
+          <DialogTitle id="alert-dialog-title" style={{ textAlign: "center" }}>
+            {"TDUSA Pilot Examination Results - " + examYear}
           </DialogTitle>
           <DialogContent className="dialog-content">
-            <FormControl  variant="standard">
+            <FormControl variant="standard">
               <TextField
                 style={{ margin: "10px" }}
                 className="input"
@@ -164,6 +179,7 @@ const Results = () => {
                 onChange={handleInputChange}
               />
             </FormControl>
+            {(error&&!result) && <div className="result-error">{error}</div>}
 
             <DialogContentText id="alert-dialog-description"></DialogContentText>
             {result && (
@@ -231,12 +247,15 @@ const Results = () => {
             )}
           </DialogContent>
           <DialogActions>
-            <Button onClick={fetchResults}>Submit</Button>
-            <Button onClick={handleClose} autoFocus>
+            <Button variant="outlined" onClick={fetchResults}>Submit</Button>
+            <Button variant="outlined" color="error" onClick={handleClose} autoFocus>
               Close
             </Button>
           </DialogActions>
         </div>
+        <Box sx={{ width: "100%" }}>
+          {loading && <LinearProgress />}
+        </Box>
       </Dialog>
     </div>
   );
