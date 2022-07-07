@@ -36,7 +36,8 @@ const Structure = () => {
 
   return (
     executiveCommittee && (
-      <div>
+      <div  ref={structureRef}
+      id="structureContainer">
         <div className="content-title">
           <p>STRUCTURE</p>
           <div></div>
@@ -50,7 +51,7 @@ const Structure = () => {
               </div>
               <div>
                 <div>
-                  <CountUp enableScrollSpy={true} scrollSpyDelay={1000} start={700} end={800} />+
+                  <CountUp scrollSpyOnce={true} enableScrollSpy={true} scrollSpyDelay={1000} end={800} />+
                 </div>
               </div>
               <div >MEMBERS</div>
@@ -63,7 +64,7 @@ const Structure = () => {
               </div>
               <div>
                 <div>
-                  <CountUp enableScrollSpy={true} scrollSpyDelay={1000} start={0} end={25} />+
+                  <CountUp scrollSpyOnce={true} enableScrollSpy={true} scrollSpyDelay={1000} end={25} />+
                 </div>
               </div>
               <div >ANNUAL <br/> EVENTS</div>
@@ -76,7 +77,7 @@ const Structure = () => {
               </div>
               <div>
                 <div>
-                  <CountUp enableScrollSpy={true}  scrollSpyDelay={1000} start={2022} end={1995} />
+                  <CountUp scrollSpyOnce={true} enableScrollSpy={true}  scrollSpyDelay={1000} start={2022} end={1995} />
                 </div>
               </div>
               <div >SINCE</div>
@@ -85,8 +86,7 @@ const Structure = () => {
         </div>
 
         <div
-          ref={structureRef}
-          id="structureContainer"
+         
           className="structureContainer"
         >
           <div className="header">

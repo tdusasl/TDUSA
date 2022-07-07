@@ -21,8 +21,10 @@ const Results = () => {
   const artsResultUri = process.env.REACT_APP_RESULTS_ARTS!;
   const [result, setResult] = useState<Result["data"]>();
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [stream, setStream] = useState("");
   const [indexNo, setIndexNo] = useState("");
+  const examYear = process.env.REACT_APP_EXAM_YEAR!
 
   const handleStreamChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setStream(event.target.value);
@@ -125,113 +127,116 @@ const Results = () => {
         Results
       </Button>
       <Dialog
+        className=""
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Select your stream and Enter Index number"}
-        </DialogTitle>
-        <DialogContent className="content">
-          <FormControl variant="standard">
-            <TextField
-              style={{ margin: "10px" }}
-              className="input"
-              id="outlined-select-stream"
-              select
-              label="Stream"
-              value={stream}
-              onChange={handleStreamChange}
-              helperText="Please select your stream"
-            >
-              {streams.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </FormControl>
-          <FormControl style={{ margin: "10px" }} variant="standard">
-            <InputLabel htmlFor="component-simple">Index Number</InputLabel>
-            <Input
-              id="component-simple"
-              value={indexNo}
-              onChange={handleInputChange}
-            />
-          </FormControl>
+        <div className="dialog-box">
+          <DialogTitle id="alert-dialog-title" style={{textAlign:"center"}}>
+            {"TDUSA Pilot Examination Results - "+examYear}
+          </DialogTitle>
+          <DialogContent className="dialog-content">
+            <FormControl  variant="standard">
+              <TextField
+                style={{ margin: "10px" }}
+                className="input"
+                id="outlined-select-stream"
+                select
+                label="Stream"
+                value={stream}
+                onChange={handleStreamChange}
+                helperText="Please select your stream"
+              >
+                {streams.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </FormControl>
+            <FormControl style={{ margin: "10px" }} variant="standard">
+              <InputLabel htmlFor="component-simple">Index Number</InputLabel>
+              <Input
+                id="component-simple"
+                value={indexNo}
+                onChange={handleInputChange}
+              />
+            </FormControl>
 
-          <DialogContentText id="alert-dialog-description"></DialogContentText>
-          {result && (
-            <div className="result">
-              <div>
-                <div>Stream :</div> {result?.Stream}
+            <DialogContentText id="alert-dialog-description"></DialogContentText>
+            {result && (
+              <div className="result">
+                <div>
+                  <div>Stream :</div> {result?.Stream}
+                </div>
+                <div>
+                  <div>Name :</div> {result?.Name}
+                </div>
+                <div>
+                  <div>IndexNo :</div> {result?.IndexNo}
+                </div>
+                {result?.Biology && (
+                  <div>
+                    <div>Biology :</div> {result?.Biology}
+                  </div>
+                )}
+                {result?.Chemistry && (
+                  <div>
+                    <div>Chemistry :</div> {result?.Chemistry}
+                  </div>
+                )}
+                {result?.Mathematics && (
+                  <div>
+                    <div>Mathematics :</div> {result?.Mathematics}
+                  </div>
+                )}
+                {result?.Physics && (
+                  <div>
+                    <div>Physics :</div> {result?.Physics}
+                  </div>
+                )}
+                {result?.Economics && (
+                  <div>
+                    <div>Economics :</div> {result?.Economics}
+                  </div>
+                )}
+                {result?.BusinessStudies && (
+                  <div>
+                    <div>BusinessStudies :</div> {result?.BusinessStudies}
+                  </div>
+                )}
+                {result?.InformationTechnology && (
+                  <div>
+                    <div>InformationTechnology :</div>{" "}
+                    {result?.InformationTechnology}
+                  </div>
+                )}
+                {result?.Accounting && (
+                  <div>
+                    <div>Accounting :</div> {result?.Accounting}
+                  </div>
+                )}
+                {result?.Rank && (
+                  <div>
+                    <div>Rank :</div> {result?.Rank}
+                  </div>
+                )}
+                <div>
+                  <div>ZScore :</div>
+                  {result?.ZScore}
+                </div>
               </div>
-              <div>
-                <div>Name :</div> {result?.Name}
-              </div>
-              <div>
-                <div>IndexNo :</div> {result?.IndexNo}
-              </div>
-              {result?.Biology && (
-                <div>
-                  <div>Biology :</div> {result?.Biology}
-                </div>
-              )}
-              {result?.Chemistry && (
-                <div>
-                  <div>Chemistry :</div> {result?.Chemistry}
-                </div>
-              )}
-              {result?.Mathematics && (
-                <div>
-                  <div>Mathematics :</div> {result?.Mathematics}
-                </div>
-              )}
-              {result?.Physics && (
-                <div>
-                  <div>Physics :</div> {result?.Physics}
-                </div>
-              )}
-              {result?.Economics && (
-                <div>
-                  <div>Economics :</div> {result?.Economics}
-                </div>
-              )}
-              {result?.BusinessStudies && (
-                <div>
-                  <div>BusinessStudies :</div> {result?.BusinessStudies}
-                </div>
-              )}
-              {result?.InformationTechnology && (
-                <div>
-                  <div>InformationTechnology :</div>{" "}
-                  {result?.InformationTechnology}
-                </div>
-              )}
-              {result?.Accounting && (
-                <div>
-                  <div>Accounting :</div> {result?.Accounting}
-                </div>
-              )}
-              {result?.Rank && (
-                <div>
-                  <div>Rank :</div> {result?.Rank}
-                </div>
-              )}
-              <div>
-                <div>ZScore :</div>
-                {result?.ZScore}
-              </div>
-            </div>
-          )}
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={fetchResults}>Submit</Button>
-          <Button onClick={handleClose} autoFocus>
-            Close
-          </Button>
-        </DialogActions>
+            )}
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={fetchResults}>Submit</Button>
+            <Button onClick={handleClose} autoFocus>
+              Close
+            </Button>
+          </DialogActions>
+        </div>
       </Dialog>
     </div>
   );

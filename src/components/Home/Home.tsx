@@ -1,14 +1,12 @@
 import Typewriter from "typewriter-effect";
-import { useNav } from "../../hooks/useNav";
 import Donate from "../Donate/Donate";
 import Results from "../Results/Results";
 import "./Home.css";
 
 const Home = () => {
-  const homeRef = useNav("Home");
 
   return (
-    <div ref={homeRef} id="homeContainer">
+    <div>
       <div className="home">
         <div className="typewriter">
           <div>27 YEARS OF</div>
@@ -23,7 +21,9 @@ const Home = () => {
                 .typeString("EXCELLENCE")
                 .pauseFor(1000)
                 .deleteAll()
-                .typeString("ANY OTHER")
+                .typeString("ENRICHMENT")
+                .deleteAll()
+                .typeString("EMPOWERING YOUTH")
                 .deleteAll()
                 .start();
             }}

@@ -21,8 +21,8 @@ const Header = () => {
           <div className={styles.navContainer}>
             <div className={styles.navElements}>
               <div 
-              className={activeNavLinkId === "Home" ? styles.activeClass : ''}
-              onClick={()=>handleClick('Home','homeContainer')} >
+              className={activeNavLinkId === "Top" ? styles.activeClass : ''}
+              onClick={()=>handleClick('Top','topContainer')} >
                 <BiHome />
               </div>
               <div 

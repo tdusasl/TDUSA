@@ -3,19 +3,18 @@
   width: 50%;
   height: 100%;
 }
-.goal {
-}
-.introduction {
+.introduction{
+  margin-bottom: 50px;
 }
 .results {
   margin-top: 10%;
   width: 25%;
-  height: 200px;
+  height: 250px;
 }
 .donate {
   margin-top: 10%;
   width: 25%;
-  height: 200px;
+  height: 250px;
 
 }
 .typewriter {
@@ -54,10 +53,10 @@
         font-size: 2rem;
       }
       .donate{
-        margin-top: 100%;
+        margin-top: 50%;
       }
       .results {
-        margin-top: 100%;
+        margin-top: 50%;
       }
       .text-content {
         width: 60%;

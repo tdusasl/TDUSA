@@ -18,6 +18,8 @@ import NavProvider from "./context/NavContext";
 import Results from "./components/Results/Results";
 import { ThemeContext } from "./context/ThemeContext";
 import Top from "./components/Top/Top";
+import { ThemeProvider, createTheme } from '@mui/material/styles'; 
+
 
 const override: CSSProperties = {
   margin: "0 auto",
@@ -27,6 +29,14 @@ const override: CSSProperties = {
   left: "50%",
   zIndex: "999",
 };
+const muitheme = createTheme({
+  typography: {
+    allVariants: {
+      fontFamily: "'Poppins', sans-serif",
+      textTransform: 'none',
+    },
+  },
+});
 
 function App() {
   let [loading, setLoading] = useState(true);
@@ -51,7 +61,7 @@ function App() {
       }
     >
       <NavProvider>
-        
+        <ThemeProvider theme={muitheme}>        
         <Particles
           className="particles"
           id="tsparticles"
@@ -148,6 +158,7 @@ function App() {
         <Structure />
         <PastPapers />
         <Footer />
+        </ThemeProvider>
       </NavProvider>
     </div>
   );

@@ -3,6 +3,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import logo from "../../assets/img/logo/logo.png";
+import { useNav } from "../../hooks/useNav";
 
 const Top = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -12,8 +13,9 @@ const Top = () => {
   const switchToDarkMode = () => {
     setTheme("dark");
   };
+  const topRef = useNav("Top");
   return (
-    <div className="top">
+    <div ref={topRef} id="topContainer" className="top">
       <div></div>
       <div className="top_logo">
         <div className="top-title">TDUSA</div>
