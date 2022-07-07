@@ -142,7 +142,7 @@ const Results = () => {
         Results
       </Button>
       <Dialog
-        className=""
+        className="dialog-container"
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
