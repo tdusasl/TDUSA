@@ -7,7 +7,9 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useNav } from "../../hooks/useNav";
+import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 import "./Events.css";
+import { Button } from "@mui/material";
 
 const Events = () => {
   const [events, setEvents] = useState<any>([]);
@@ -20,7 +22,11 @@ const Events = () => {
   const eventsRef = useNav("Events");
 
   const expand = {
+    content: "hello",
     height: "400px",
+  };
+  const expandButton = {
+    visibility: "hidden",
   };
 
   const handleSetOpen = (key: any) => {
@@ -78,31 +84,43 @@ const Events = () => {
                 }}
               >
                 <div
+                  onClick={() => handleSetOpen(key)}
                   className={"container expand"}
                   style={open && activeId === key ? expand : {}}
                 >
                   <div className="upper">
+                    <img src={event} alt="" />
                     <h3 className="vertical-timeline-element-title">
                       {item.name}
                     </h3>
-                    <img width="300px" src={event} alt="" />
-                    <div>
-                    <button onClick={() => handleSetOpen(key)}>
-                      Show more
-                    </button>
-                    </div>
+                    {(
+                      <div>
+                        <Button style={activeId === key && open ? {display:"none"} : {}}>
+                          Show more
+                          <BsArrowDown />
+                        </Button>
+                      </div>
+                    )}
+                   
                   </div>
                   {open && (
                     <div className="lower">
                       <h3>Expansion</h3>
-                    </div>
-                  )}
-
-                  {/* <img
+                      {(
+                      <div>
+                        <Button style={activeId !== key ? {display:"none"} : {}}>
+                          Show few
+                          <BsArrowUp />
+                        </Button>
+                      </div>
+                    )}
+                      {/* <img
                   width="300px"
                   src={"//drive.google.com/uc" + item.photo.substring(29)}
                   alt=""
                 /> */}
+                    </div>
+                  )}
                 </div>
               </VerticalTimelineElement>
             ))}
