@@ -2,7 +2,7 @@
   margin-top: 30px;
   width: 60%;
   height: 36vh;
-  border-radius: 10px;
+  color: white !important;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -19,17 +19,15 @@
   margin-top: 20px;
   width: 70%;
   height: 70%;
-  border-radius: 20px;
 }
 .slide-container {
-  background-color: #7e8188;
+  background-color: #202c3c;;
   height: 100%;
   padding-top: 20px;
   padding-left: 40px;
   padding-right: 40px;
 }
 .slide-container>div:nth-child(2){
-  color:var(--color-primary);
   font-size: 1.5rem;
 }
 .flex-cont {
@@ -56,7 +54,6 @@
   .slide div img {
     width: 250px;
     height: 18vh;
-    border-radius: 20px;
   }
   .slide-container {
     padding: 20px;

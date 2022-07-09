@@ -39,7 +39,7 @@
   margin-left: 7.5%;
 }
 .home .content-title > p {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: bold;
   text-align: left;
   margin-top: 2%;
@@ -72,8 +72,6 @@
       }
       .home .content-title {
         width: 80%;
-        margin-left: 0;
-        margin :0 auto;
         margin-top: 20px;
         margin-bottom: 10px;
       }
@@ -83,11 +81,17 @@
         background: #95c3e9;
       }
       .home .content-title > p {
-        font-size: 2rem;
         font-weight: bold;
-        text-align: center;
+        text-align: left;
         margin-top: 1%;
         height: 10px;
+      }
+      .typewriter > div:nth-child(2) {
+        font-size: 2rem;
+      }
+      .typewriter {
+        font-size: 1rem;
+        
       }
       
 }

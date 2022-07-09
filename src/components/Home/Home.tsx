@@ -19,12 +19,12 @@ const Home = () => {
             }}
             onInit={(typewriter) => {
               typewriter
-                .typeString("EXCELLENCE")
+                .typeString("EXCELLENCE.")
                 .pauseFor(1000)
                 .deleteAll()
-                .typeString("ENRICHMENT")
+                .typeString("ENRICHMENT.")
                 .deleteAll()
-                .typeString("EMPOWERING YOUTH")
+                .typeString("EMPOWERING YOUTH.")
                 .deleteAll()
                 .start();
             }}

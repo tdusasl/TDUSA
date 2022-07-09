@@ -14,11 +14,18 @@
     height: 100%;
     justify-content: space-between;
 }
-.top>div{
+.top>div:nth-child(1){
     height: 7%;
     width: 25%;
 
 }
+
+.top>div:nth-child(3){
+    height: 7%;
+    width: 25%;
+
+}
+
 
 .top-title{
     font-size: 2rem;
@@ -41,12 +48,17 @@
 @media screen and (max-width: 576px) {
     .top img{
         margin-top: 5%;
-        width: 100%;
+        width: 60%;
         height: 100%;
         margin-bottom: 2%;
     }
     .top-title{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
+    .top>div:nth-child(2){
+        width: 70%;
+        height: 1%;
+    }
+    
 
 }
