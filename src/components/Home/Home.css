@@ -6,15 +6,24 @@
 .introduction{
   margin-bottom: 50px;
 }
+.home-contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+
+}
+
 .results {
-  margin-top: 5%;
+  /* margin-top: 5%;
   width: 25%;
-  height: 250px;
+  height: 250px; */
 }
 .donate {
-  margin-top: 5%;
+  /* margin-top: 5%;
   width: 25%;
-  height: 250px;
+  height: 250px; */
 
 }
 .typewriter {
@@ -45,6 +54,8 @@
 .content {
   z-index: 99999;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -53,10 +64,8 @@
         font-size: 2rem;
       }
       .donate{
-        margin-top: 50%;
       }
       .results {
-        margin-top: 50%;
       }
       .text-content {
         width: 60%;

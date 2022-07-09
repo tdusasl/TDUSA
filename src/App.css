@@ -55,6 +55,6 @@ a {
 
 @media screen and (max-width: 576px) {
   .particles{
-    height: 400px;
+    height: 300px;
   }
 }

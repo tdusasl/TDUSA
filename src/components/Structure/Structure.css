@@ -46,7 +46,7 @@
 }
 .monitorCommittee1 div img {
   border-radius: 50%;
-  border: 0.8rem solid rgba(149, 195, 233, 0.5);
+  border: 0.5rem solid rgba(149, 195, 233, 0.5);
 }
 .monitorCommittee2 {
   display: flex;
@@ -71,26 +71,41 @@
   font-size: 2rem;
 }
 .structure-card > div {
+  display: flex;
   width: 30%;
 }
-.structure-card > div > div {
+
+.structure-card > div> .structure-child {
   margin: 0 auto;
   border-radius: 40px;
-  background-color: white;
+  border: 5px solid var(--color-secondary);
   height: 400px;
   width: 70%;
   padding-top: 50px;
-  color: black;
+  background-color: var(--color-primary);
+  z-index: 2;
 }
 .structure-card > div > div > div:nth-child(1) {
   margin: 0 auto;
   height: 100px;
   width: 100px;
   border-radius: 50%;
+  border: 3px solid var(--color-secondary);
   background-color: var(--color-primary);
   color: var(--color-secondary);
   font-size: 4rem;
   margin-bottom: 50px;
+}
+.structure-card > div .back-card{
+  border-radius: 0 40px 40px 0;
+  width: 60%;
+  margin-right: 10%;
+  margin-left: -70%;
+  margin-top: -10px;
+  height: 480px;
+  background-color: aqua;
+  border: none;
+  z-index: 1;
 }
 .structure-card > div:nth-child(1) {
   border-style: none solid none none;
@@ -165,5 +180,14 @@
     text-align: center;
     margin-top: 2%;
     height: 10px;
+  }
+  .structure-card > div .back-card{
+    margin-left: -70%;
+    margin-top: -10px;
+    height: 460px;
+    background-color: aqua;
+    border: none;
+    z-index: 1;
+    width: 60%;
   }
 }

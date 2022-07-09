@@ -36,8 +36,7 @@ const Structure = () => {
 
   return (
     executiveCommittee && (
-      <div  ref={structureRef}
-      id="structureContainer">
+      <div ref={structureRef} id="structureContainer">
         <div className="content-title">
           <p>STRUCTURE</p>
           <div></div>
@@ -45,50 +44,71 @@ const Structure = () => {
 
         <div className="structure-card">
           <div>
-            <div>
+            <div className="structure-child">
               <div>
                 <MdOutlinePeopleAlt style={{ marginTop: "17%" }} />
               </div>
               <div>
                 <div>
-                  <CountUp scrollSpyOnce={true} enableScrollSpy={true} scrollSpyDelay={1000} end={800} />+
+                  <CountUp
+                    scrollSpyOnce={true}
+                    enableScrollSpy={true}
+                    scrollSpyDelay={1000}
+                    end={800}
+                  />
+                  +
                 </div>
               </div>
-              <div >MEMBERS</div>
+              <div>MEMBERS</div>
             </div>
+            <div className="back-card"></div>
           </div>
+
           <div>
-            <div>
+            <div className="structure-child">
               <div>
                 <RiCalendarEventFill style={{ marginTop: "17%" }} />
               </div>
               <div>
                 <div>
-                  <CountUp scrollSpyOnce={true} enableScrollSpy={true} scrollSpyDelay={1000} end={25} />+
+                  <CountUp
+                    scrollSpyOnce={true}
+                    enableScrollSpy={true}
+                    scrollSpyDelay={1000}
+                    end={25}
+                  />
+                  +
                 </div>
               </div>
-              <div >ANNUAL <br/> EVENTS</div>
+              <div>
+                ANNUAL <br /> EVENTS
+              </div>
             </div>
+            <div className="back-card"></div>
           </div>
           <div>
-            <div>
+            <div className="structure-child">
               <div>
                 <TbHeartHandshake style={{ marginTop: "17%" }} />
               </div>
               <div>
                 <div>
-                  <CountUp scrollSpyOnce={true} enableScrollSpy={true}  scrollSpyDelay={1000} start={2022} end={1995} />
+                  <CountUp
+                    scrollSpyOnce={true}
+                    enableScrollSpy={true}
+                    scrollSpyDelay={1000}
+                    start={2022}
+                    end={1995}
+                  />
                 </div>
               </div>
-              <div >SINCE</div>
+              <div>SINCE</div>
             </div>
+            <div className="back-card"></div>
           </div>
         </div>
 
-        <div
-         
-          className="structureContainer"
-        >
+        <div className="structureContainer">
           <div className="header">
             {" "}
             Patrons

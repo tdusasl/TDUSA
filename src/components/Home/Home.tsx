@@ -2,9 +2,10 @@ import Typewriter from "typewriter-effect";
 import Donate from "../Donate/Donate";
 import Results from "../Results/Results";
 import "./Home.css";
+import { BsWhatsapp, BsFacebook } from "react-icons/bs";
+import { MdMailOutline } from "react-icons/md";
 
 const Home = () => {
-
   return (
     <div>
       <div className="home">
@@ -29,15 +30,22 @@ const Home = () => {
             }}
           />
         </div>
+        <div className="home-contact">
+          <div className="results">
+            <Results />
+          </div>
+            <BsFacebook/>
+            <BsWhatsapp/>
+            <MdMailOutline/>
+          <div className="donate">
+            <Donate />
+          </div>
+        </div>
         <div className="content-title">
           <p>ABOUT US</p>
           <div></div>
         </div>
         <div className="content">
-          <div className="results">
-            <Results />
-          </div>
-
           <div className="text-content">
             <div className="introduction">
               <h1>WHO ARE WE?</h1>
@@ -64,9 +72,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="donate">
-            <Donate />
-          </div>
+          
         </div>
       </div>
     </div>
