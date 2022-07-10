@@ -19,6 +19,7 @@ import Results from "./components/Results/Results";
 import { ThemeContext } from "./context/ThemeContext";
 import Top from "./components/Top/Top";
 import { ThemeProvider, createTheme } from '@mui/material/styles'; 
+import Testimonials from "./components/Testimonials/Testimonials";
 
 
 const override: CSSProperties = {
@@ -157,6 +158,7 @@ function App() {
         <Testimonial />
         <Structure />
         <PastPapers />
+        <Testimonials/>
         <Footer />
         </ThemeProvider>
       </NavProvider>

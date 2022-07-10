@@ -17,11 +17,13 @@ export default function Testimonial() {
     <>
       <Swiper
         spaceBetween={30}
-        effect={"fade"}
+
         navigation={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
+        pagination={{
+          clickable: true,
+        }}
+        effect={"fade"}
+        loop={true}
         modules={[EffectFade, Navigation, Pagination]}
         className="mySwiper"
       >
