@@ -99,12 +99,11 @@
 .structure-card > div .back-card{
   border-radius: 0 40px 40px 0;
   width: 40%;
-  margin-right: 10%;
-  margin-left: -70%;
+  margin-right: 20%;
+  margin-left: -50%;
   margin-top: -10px;
   height: 480px;
   background-color: #95c3e9;
-  border: none;
   z-index: 1;
 }
 .structure-card > div:nth-child(1) {
@@ -116,6 +115,9 @@
 .structure-card > div > div > div:nth-child(3) {
     margin-top: 50px;
   }
+
+
+  
 @media screen and (max-width: 576px) {
   .monitorCommittee1 {
     flex-direction: column;
@@ -196,8 +198,11 @@
   .structure-card > div> .structure-child {
     height: 300px;
     width: 70%;
+    margin-left: 20%;
   }
   .structure-card > div .back-card{
+    width: 60%;
+    margin-left: -45%;
 
     height: 360px;
 

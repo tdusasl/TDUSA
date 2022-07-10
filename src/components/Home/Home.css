@@ -68,7 +68,7 @@
       .results {
       }
       .text-content {
-        width: 60%;
+        width: 80%;
       }
       .home .content-title {
         width: 80%;
@@ -91,7 +91,6 @@
       }
       .typewriter {
         font-size: 1rem;
-        
       }
       
 }

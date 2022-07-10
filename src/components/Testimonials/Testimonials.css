@@ -1,5 +1,6 @@
-.swiper {
-    padding: 1.5em;
+.testimonials .swiper{
+    width: 80%;
+    height: 40vh;
 }
 .swiper .content-wrapper {
     position: relative;
@@ -30,7 +31,7 @@
 }
 .swiper .swiper-slide {
     margin: 0;
-    height: auto;
+    /* height: auto; */
     width: 100%;
     padding: 0;
     opacity: 0.2;

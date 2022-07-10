@@ -7,12 +7,12 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./Testimonial.css";
+import "./EventSlide.css";
 
 // import required modules
 import { EffectFade, Navigation, Pagination } from "swiper";
 
-export default function Testimonial() {
+export default function EventSlide() {
   return (
     <>
       <Swiper

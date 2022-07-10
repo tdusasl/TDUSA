@@ -1,9 +1,9 @@
-import "./Stats.css";
+import "./Vizhuthuhal.css";
 import CountUp from "react-countup";
 import hands from '../../assets/img/hands/hands.png'
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-const Stats = () => {
+const Vizhuthuhal = () => {
   const { theme} = useContext(ThemeContext);
   return (
     <div>
@@ -44,4 +44,4 @@ const Stats = () => {
     </div>
   );
 };
-export default Stats;
+export default Vizhuthuhal;

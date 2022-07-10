@@ -9,11 +9,11 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import PastPapers from "./components/PastPapers/PastPapers";
-import Stats from "./components/Stats/Stats";
+import Vizhuthuhal from "./components/Vizhuthuhal/Vizhuthuhal";
 import Structure from "./components/Structure/Structure";
 import { useState, CSSProperties } from "react";
 import DotLoader from "react-spinners/DotLoader";
-import Testimonial from "./components/Testimonial/Testimonial";
+import EventSlide from "./components/EventSlide/EventSlide";
 import NavProvider from "./context/NavContext";
 import Results from "./components/Results/Results";
 import { ThemeContext } from "./context/ThemeContext";
@@ -154,8 +154,8 @@ function App() {
         <Header />
         <Home />
         <Events />
-        <Stats />
-        <Testimonial />
+        <Vizhuthuhal />
+        <EventSlide />
         <Structure />
         <PastPapers />
         <Testimonials/>
