@@ -27,7 +27,7 @@ const Testimonials = () => {
         }}
         navigation={false}
         breakpoints={{
-            376: {
+            200: {
               slidesPerView: 1,
             },
             768: {
