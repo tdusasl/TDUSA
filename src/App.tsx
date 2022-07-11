@@ -15,11 +15,10 @@ import { useState, CSSProperties } from "react";
 import DotLoader from "react-spinners/DotLoader";
 import EventSlide from "./components/EventSlide/EventSlide";
 import NavProvider from "./context/NavContext";
-import Results from "./components/Results/Results";
 import { ThemeContext } from "./context/ThemeContext";
 import Top from "./components/Top/Top";
 import { ThemeProvider, createTheme } from '@mui/material/styles'; 
-import Testimonials from "./components/Testimonials/Testimonials";
+import EventCalendar from "./components/EventCalendar/EventCalendar";
 
 
 const override: CSSProperties = {
@@ -154,11 +153,11 @@ function App() {
         <Header />
         <Home />
         <Events />
+        <EventCalendar/>
         <Vizhuthuhal />
         <EventSlide />
         <Structure />
         <PastPapers />
-        <Testimonials/>
         <Footer />
         </ThemeProvider>
       </NavProvider>

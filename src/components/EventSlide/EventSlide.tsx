@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import event from "../../assets//img/event1.jpg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,10 +18,11 @@ export default function EventSlide() {
     <>
       <Swiper
         spaceBetween={30}
-
         navigation={true}
         pagination={{
-          clickable: true,
+          clickable: true
+          // ,
+          // el: ".swiper-pagination",
         }}
         effect={"fade"}
         loop={true}
@@ -33,32 +35,13 @@ export default function EventSlide() {
               <div>MOMENTS OF US</div>
               <div className="slide">
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                  <img src={event} />
                 </div>
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                  <img src={event} />
                 </div>
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                </div>
-              </div>
-            </div>
-            <div>PONGAL VIZHA 2022</div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-container">
-            <div className="flex-cont">
-              <div>MOMENTS OF US</div>
-              <div className="slide">
-                <div>
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </div>
-                <div>
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </div>
-                <div>
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                  <img src={event} />
                 </div>
               </div>
             </div>
@@ -71,13 +54,13 @@ export default function EventSlide() {
               <div>MOMENTS OF US</div>
               <div className="slide">
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                  <img src={event} />
                 </div>
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                  <img src={event} />
                 </div>
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                  <img src={event} />
                 </div>
               </div>
             </div>
@@ -90,13 +73,13 @@ export default function EventSlide() {
               <div>MOMENTS OF US</div>
               <div className="slide">
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                  <img src={event} />
                 </div>
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                  <img src={event} />
                 </div>
                 <div>
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                  <img src={event} />
                 </div>
               </div>
             </div>

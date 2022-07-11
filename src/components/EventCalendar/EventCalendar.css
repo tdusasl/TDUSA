@@ -1,0 +1,45 @@
+.event-calendar-container{
+    width: 100%;
+    height: 100%;
+}
+.event-calendar img{
+    width: 100%;
+    height: 100%;
+}
+.upcoming-events-container .heading{
+    margin: 0 auto;
+    width: 40%;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.upcoming-events{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.upcoming-events>div{
+    width: 150px;
+    height: 150px;
+    background-color: #C3DEF4;
+    color: black;
+}
+.upcoming-events>div>div:nth-child(3){
+    height: 2px;
+    background: #95c3e9;
+    width: 80%;
+    margin: 0 auto;
+}
+.upcoming-events .event-date{
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 576px) {
+    .upcoming-events{
+        flex-direction: column;
+    }
+
+}

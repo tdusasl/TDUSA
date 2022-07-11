@@ -7,12 +7,12 @@ import { MdOutlinePeopleAlt } from "react-icons/md";
 import { RiCalendarEventFill } from "react-icons/ri";
 import { TbHeartHandshake } from "react-icons/tb";
 import CountUp from "react-countup";
+import Testimonials from "../Testimonials/Testimonials";
 
 const Structure = () => {
   const [executiveCommittee, setExecutiveCommittee] = useState<any>([]);
   const committeeUri = process.env.REACT_APP_COMITTEE_MEMBERS!;
   const auditor = process.env.REACT_APP_AUDITOR!;
-  const legalAdvisor = process.env.REACT_APP_LEGAL_ADVISOR!;
   const patrons = process.env.REACT_APP_PATRONS?.split(",")!;
   const monitoringCommittee1 =
     process.env.REACT_APP_MONITORING_COMMITEE_1?.split(",")!;
@@ -107,6 +107,9 @@ const Structure = () => {
             <div className="back-card"></div>
           </div>
         </div>
+        <div className="testimonial-container">
+          <Testimonials />
+        </div>
 
         <div className="structureContainer">
           <div className="header">
@@ -172,16 +175,6 @@ const Structure = () => {
                 <img width="80px" height="80px" src={profile} alt="" />
 
                 <div>{auditor}</div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="header"> Legal Advisor </div>
-            <div className="committee">
-              <div>
-                <img width="80px" height="80px" src={profile} alt="" />
-                <div>{legalAdvisor}</div>
               </div>
             </div>
           </div>
