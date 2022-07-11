@@ -99,8 +99,8 @@
 .structure-card > div .back-card{
   border-radius: 0 40px 40px 0;
   width: 40%;
-  margin-right: 20%;
-  margin-left: -50%;
+  margin-right: 24%;
+  margin-left: -60%;
   margin-top: -10px;
   height: 480px;
   background-color: #95c3e9;
@@ -159,7 +159,7 @@
   }
   .structure-card > div > div > div:nth-child(1) {
     font-size: 4rem;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
   }
   .structure-card > div > div > div:nth-child(3) {
     margin-top: 10px;
@@ -198,12 +198,12 @@
   .structure-card > div> .structure-child {
     height: 300px;
     width: 70%;
-    margin-left: 20%;
+    margin-left: 24%;
+    font-size: 1.5rem;
   }
   .structure-card > div .back-card{
     width: 60%;
-    margin-left: -45%;
-
+    margin-left: -40%;
     height: 360px;
 
   }
