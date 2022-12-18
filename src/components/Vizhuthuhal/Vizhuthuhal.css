@@ -16,7 +16,11 @@
   height: 1px;
   background: #95c3e9;
 }
-
+.vizhuthugal-intro{
+  width: 85%;
+  margin: 0 auto;
+  font-size: large;
+}
 
 .stats {
   background-color: #202c3c;

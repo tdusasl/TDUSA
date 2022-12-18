@@ -34,9 +34,9 @@ const Home = () => {
           <div className="results">
             <Results />
           </div>
-            <BsFacebook/>
-            <BsWhatsapp/>
-            <MdMailOutline/>
+          <BsFacebook />
+          <BsWhatsapp />
+          <MdMailOutline />
           <div className="donate">
             <Donate />
           </div>
@@ -50,29 +50,31 @@ const Home = () => {
             <div className="introduction">
               <h1>WHO ARE WE?</h1>
               <p>
-                Trincomalee District University Students’ Association is a
-                non-profitable public organization run by the undergraduates who
-                were selected to university from Trincomalee from various
-                streams such as Physical science, Biological science, Commerce,
-                Arts, Bio technology and Engineering technology.
+                Trincomalee district University Students Association also known
+                as TDUSA is a non profitable public organisation which was run
+                by enthusiastic University undergraduates of Trincomalee, in
+                order to uplift the educational and social standards of our
+                district. Our association contains members from various streams
+                including Physical science, Biological science, Commerce, Arts,
+                Bio technology and Engineering technology.
               </p>
             </div>
             <div className="goal">
               <h1>WHAT DO WE DO?</h1>
               <p>
-                Our main goal is to uplift the educational standards of the
-                students of Trincomalee district. And along with education we
-                also take care in social and environmental developing
-                activities. Our union is being an enormously active as well as a
-                rapidly growing socialwell-wishing association now a days. We
-                are conducting about 25 projects annually. Passing 700 members
-                over 25 years, our organization has made a sustainable
-                development iall the activities and had earned a prominent fame
-                around our society.
+                TDUSA functions primarily focusing on improvement of the
+                educational standard of Trincomalee students. 25 years of
+                dedicated and sincere service, surpassing many ups and downs
+                lead us now t o function in a validated way t o deliver
+                invaluable education service t o our students. Along with that
+                now we are providing social snd environmental improvement
+                service to our district annually on a large scale. Passing over
+                25 years and more than 700 mentors, our organisation has made
+                sustainable development in all the activities and earned a
+                prominent fame around our society.
               </p>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

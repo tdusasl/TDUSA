@@ -85,8 +85,7 @@ const Testimonials = () => {
                 <p className="cite">- Juliet Elliott, Cyclist</p>
               </div>
             </div></SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
+
         </div>
       </Swiper>
     </div>

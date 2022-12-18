@@ -105,7 +105,7 @@ const Events = () => {
                   </div>
                   {open && (
                     <div className="lower">
-                      <h3>Expansion</h3>
+                    
                       {(
                       <div>
                         <Button style={activeId !== key ? {display:"none"} : {}}>
@@ -114,11 +114,11 @@ const Events = () => {
                         </Button>
                       </div>
                     )}
-                      {/* <img
+                      <img
                   width="300px"
                   src={"//drive.google.com/uc" + item.photo.substring(29)}
                   alt=""
-                /> */}
+                />
                     </div>
                   )}
                 </div>
