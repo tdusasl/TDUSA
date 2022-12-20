@@ -10,7 +10,6 @@ import CountUp from "react-countup";
 import Testimonials from "../Testimonials/Testimonials";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-
 const Structure = () => {
   const { theme } = useContext(ThemeContext);
   const [executiveCommittee, setExecutiveCommittee] = useState<any>([]);

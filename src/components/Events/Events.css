@@ -43,6 +43,10 @@
 .lower {
   padding: 40px;
 }
+.lower .eventImg{
+  height: 100%;
+  width: 100%;
+}
 
 
 @media screen and (max-width: 576px) {

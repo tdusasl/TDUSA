@@ -114,8 +114,7 @@ const Events = () => {
                         </Button>
                       </div>
                     )}
-                      <img
-                  width="300px"
+                      <img loading="lazy"  className="eventImg"
                   src={"//drive.google.com/uc" + item.photo.substring(29)}
                   alt=""
                 />
