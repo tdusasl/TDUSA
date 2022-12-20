@@ -52,6 +52,7 @@ const Events = () => {
 
   useEffect(() => {
     fetchEvents();
+    console.log(events);
     // eslint-disable-next-line
   }, []);
 
@@ -84,18 +85,24 @@ const Events = () => {
                 }}
               >
                 <div
-                  onClick={() => handleSetOpen(key)}
                   className={"container expand"}
                   style={open && activeId === key ? expand : {}}
                 >
                   <div className="upper">
-                    <img src={event} alt="" />
+                    {/* <img src={event} alt="" /> */}
+                    <img loading="lazy"  className="eventImg"
+                  // src={"https://drive.google.com/uc" + item.displayPhoto.substring(29)}
+                  src={item.displayPhoto}
+                  alt=""
+                />
                     <h3 className="vertical-timeline-element-title">
                       {item.name}
                     </h3>
                     {(
                       <div>
-                        <Button style={activeId === key && open ? {display:"none"} : {}}>
+                        <Button
+                  onClick={() => handleSetOpen(key)}
+                        style={activeId === key && open ? {display:"none"} : {}}>
                           Show more
                           <BsArrowDown />
                         </Button>
@@ -108,14 +115,17 @@ const Events = () => {
                     
                       {(
                       <div>
-                        <Button style={activeId !== key ? {display:"none"} : {}}>
+                        <Button
+                         onClick={() => handleSetOpen(key)}
+                        style={activeId !== key ? {display:"none"} : {}}>
                           Show few
                           <BsArrowUp />
                         </Button>
                       </div>
                     )}
                       <img loading="lazy"  className="eventImg"
-                  src={"//drive.google.com/uc" + item.photo.substring(29)}
+                  // src={"//drive.google.com/uc" + item.photo.substring(29)}
+                  src={item.photo}
                   alt=""
                 />
                     </div>
