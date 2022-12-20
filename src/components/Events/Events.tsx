@@ -67,7 +67,7 @@ const Events = () => {
               <VerticalTimelineElement
                 key={key}
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: "white", color: "#000" }}
+                contentStyle={{ background: "white", color: "#000",borderRadius:"25px" }}
                 contentArrowStyle={{
                   border: "none",
                   borderRight: "none",
