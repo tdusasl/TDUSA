@@ -153,7 +153,7 @@ function App() {
         <Header />
         <Home />
         <Events />
-        <EventCalendar/>
+        {/* <EventCalendar/> */}
         <Vizhuthuhal />
         <EventSlide />
         <Structure />

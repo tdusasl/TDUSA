@@ -45,7 +45,7 @@ export default function EventSlide() {
                 </div>
               </div>
             </div>
-            <div>PONGAL VIZHA 2022</div>
+            <div>PONGAL VIZHA</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -64,7 +64,7 @@ export default function EventSlide() {
                 </div>
               </div>
             </div>
-            <div>PONGAL VIZHA 2022</div>
+            <div>Do you know Quiz</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -83,7 +83,7 @@ export default function EventSlide() {
                 </div>
               </div>
             </div>
-            <div>PONGAL VIZHA 2022</div>
+            <div>A/L pilot exam</div>
           </div>
         </SwiperSlide>
       </Swiper>

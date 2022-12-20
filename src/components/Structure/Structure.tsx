@@ -8,8 +8,11 @@ import { RiCalendarEventFill } from "react-icons/ri";
 import { TbHeartHandshake } from "react-icons/tb";
 import CountUp from "react-countup";
 import Testimonials from "../Testimonials/Testimonials";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const Structure = () => {
+  const { theme } = useContext(ThemeContext);
   const [executiveCommittee, setExecutiveCommittee] = useState<any>([]);
   const committeeUri = process.env.REACT_APP_COMITTEE_MEMBERS!;
   const auditor = process.env.REACT_APP_AUDITOR!;
@@ -44,7 +47,7 @@ const Structure = () => {
 
         <div className="structure-card">
           <div>
-            <div className="structure-child">
+            <div className={theme === "dark" ? "structure-child" : theme === "light" ? "structure-child-light" : ""}>
               <div>
                 <MdOutlinePeopleAlt style={{ marginTop: "17%" }} />
               </div>
@@ -65,7 +68,7 @@ const Structure = () => {
           </div>
 
           <div>
-            <div className="structure-child">
+            <div className={theme === "dark" ? "structure-child" : theme === "light" ? "structure-child-light" : ""}>
               <div>
                 <RiCalendarEventFill style={{ marginTop: "17%" }} />
               </div>
@@ -87,7 +90,7 @@ const Structure = () => {
             <div className="back-card"></div>
           </div>
           <div>
-            <div className="structure-child">
+            <div className={theme === "dark" ? "structure-child" : theme === "light" ? "structure-child-light" : ""}>
               <div>
                 <TbHeartHandshake style={{ marginTop: "17%" }} />
               </div>

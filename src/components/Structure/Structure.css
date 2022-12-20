@@ -83,6 +83,18 @@
   width: 50%;
   padding-top: 50px;
   background-color: var(--color-primary);
+
+  z-index: 2;
+}
+.structure-card > div> .structure-child-light {
+  margin: 0 auto;
+  border-radius: 40px;
+  border: 5px solid  #95c3e9;
+  height: 400px;
+  width: 50%;
+  padding-top: 50px;
+  background-color: white;
+
   z-index: 2;
 }
 .structure-card > div > div > div:nth-child(1) {
