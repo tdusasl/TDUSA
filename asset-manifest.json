@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/TDUSA/static/css/main.40fba818.css",
-    "main.js": "/TDUSA/static/js/main.bb6f4a0e.js",
+    "main.css": "/TDUSA/static/css/main.6f958d8a.css",
+    "main.js": "/TDUSA/static/js/main.631f94df.js",
     "static/js/787.652e0442.chunk.js": "/TDUSA/static/js/787.652e0442.chunk.js",
     "static/media/logo.png": "/TDUSA/static/media/logo.8fe6a3d2f6c42b15d0a7.png",
     "static/media/event.png": "/TDUSA/static/media/event.a7cfdd5d5ebe15752e41.png",
     "static/media/event1.jpg": "/TDUSA/static/media/event1.5f187e47fb39ba89b76b.jpg",
     "static/media/hands.png": "/TDUSA/static/media/hands.e369182fafe5c96e4684.png",
+    "static/media/muraleetharan.jpeg": "/TDUSA/static/media/muraleetharan.a041042d8c61474b7de1.jpeg",
     "index.html": "/TDUSA/index.html",
-    "main.40fba818.css.map": "/TDUSA/static/css/main.40fba818.css.map",
-    "main.bb6f4a0e.js.map": "/TDUSA/static/js/main.bb6f4a0e.js.map",
+    "main.6f958d8a.css.map": "/TDUSA/static/css/main.6f958d8a.css.map",
+    "main.631f94df.js.map": "/TDUSA/static/js/main.631f94df.js.map",
     "787.652e0442.chunk.js.map": "/TDUSA/static/js/787.652e0442.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40fba818.css",
-    "static/js/main.bb6f4a0e.js"
+    "static/css/main.6f958d8a.css",
+    "static/js/main.631f94df.js"
   ]
 }
