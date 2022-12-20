@@ -1,6 +1,5 @@
 import Papa from "papaparse";
 import { useEffect, useState } from "react";
-import event from "../../assets/img/event.png";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -95,9 +94,9 @@ const Events = () => {
                   src={item.displayPhoto}
                   alt=""
                 />
-                    <h3 className="vertical-timeline-element-title">
+                    <h5 className="vertical-timeline-element-title">
                       {item.name}
-                    </h3>
+                    </h5>
                     {(
                       <div>
                         <Button
