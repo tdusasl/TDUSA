@@ -48,6 +48,9 @@ const EventSlide = () => {
     if (numberOfMomentsToDisplay + 2 <= moments.length) {
       setNumberOfMomentsToDisplay(numberOfMomentsToDisplay + 2);
     }
+    else if(numberOfMomentsToDisplay +1 === moments.length){
+      setNumberOfMomentsToDisplay(numberOfMomentsToDisplay+1)
+    } 
   };
   return (
     <>
