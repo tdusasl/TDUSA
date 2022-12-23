@@ -13,11 +13,9 @@ import { Button } from "@mui/material";
 const Events = () => {
   const [events, setEvents] = useState<any>([]);
   const eventsUri = process.env.REACT_APP_EVENTS!;
-  const [numberOfEventsToDisplay, setNumberOfEventsToDisplay] =
-    useState<number>(3);
+  const [numberOfEventsToDisplay, setNumberOfEventsToDisplay] =useState<number>(3);
   const [open, setOpen] = useState<boolean>(false);
   const [activeId, setActiveId] = useState(null);
-  events.slice(0, 10);
   const eventsRef = useNav("Events");
 
   const expand = {
@@ -67,7 +65,11 @@ const Events = () => {
               <VerticalTimelineElement
                 key={key}
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: "white", color: "#000",borderRadius:"25px" }}
+                contentStyle={{
+                  background: "white",
+                  color: "#000",
+                  borderRadius: "25px",
+                }}
                 contentArrowStyle={{
                   border: "none",
                   borderRight: "none",
@@ -88,59 +90,57 @@ const Events = () => {
                   style={open && activeId === key ? expand : {}}
                 >
                   <div className="upper">
-                    {/* <img src={event} alt="" /> */}
-                    <img loading="lazy"  className="eventImg"
-                  // src={"https://drive.google.com/uc" + item.displayPhoto.substring(29)}
-                  src={item.displayPhoto}
-                  alt=""
-                />
+                    <img
+                      loading="lazy"
+                      className="eventImg"
+                      src={item.displayPhoto}
+                      alt=""
+                    />
                     <h5 className="vertical-timeline-element-title">
                       {item.name}
                     </h5>
-                    {(
+                    {
                       <div>
                         <Button
-                  onClick={() => handleSetOpen(key)}
-                        style={activeId === key && open ? {display:"none"} : {}}>
+                          onClick={() => handleSetOpen(key)}
+                          style={
+                            activeId === key && open ? { display: "none" } : {}
+                          }
+                        >
                           Show more
                           <BsArrowDown />
                         </Button>
                       </div>
-                    )}
-                   
+                    }
                   </div>
                   {open && (
                     <div className="lower">
-                    
-                      {(
-                      <div>
-                        <Button
-                         onClick={() => handleSetOpen(key)}
-                        style={activeId !== key ? {display:"none"} : {}}>
-                          Show few
-                          <BsArrowUp />
-                        </Button>
-                      </div>
-                    )}
-                      <img loading="lazy"  className="eventImg"
-                  // src={"//drive.google.com/uc" + item.photo.substring(29)}
-                  src={item.photo}
-                  alt=""
-                />
+                      {
+                        <div>
+                          <Button
+                            onClick={() => handleSetOpen(key)}
+                            style={
+                              activeId !== key && open
+                                ? { display: "none" }
+                                : {}
+                            }
+                          >
+                            Show few
+                            <BsArrowUp />
+                          </Button>
+                        </div>
+                      }
+                      <img
+                        loading="lazy"
+                        className="eventImg"
+                        src={item.photo}
+                        alt=""
+                      />
                     </div>
                   )}
                 </div>
               </VerticalTimelineElement>
             ))}
-
-          {/* <VerticalTimelineElement
-         iconStyle={{
-          background: "var(--color-primary)",
-          color: "var(--color-secondary)",
-          fontFamily: "Roboto",
-          backgroundColor: "var(--color-primary)",
-        }}
-        /> */}
         </VerticalTimeline>
       </div>
       <button className="button" onClick={showAllEvents}>

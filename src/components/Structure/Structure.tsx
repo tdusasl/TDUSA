@@ -133,17 +133,8 @@ const Structure = () => {
               {" "}
               {executiveCommittee.map((item: any, key: any) => (
                 <div key={key}>
-                  {/* { <img
-                width="80px"
-                height="80px"
-                style={{ borderRadius: "100px" }}
-                src={"//drive.google.com/uc" + item.photo.substring(29) }
-              ></img> } */}
-
-                  <img width="80px" height="80px" src={profile} alt="" />
-
+                  <img width="80px" height="80px" src={item.photo} alt="" />
                   <div>{item.name}</div>
-
                   <h4>{item.designation}</h4>
                 </div>
               ))}

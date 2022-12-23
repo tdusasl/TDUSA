@@ -63,7 +63,7 @@ const Results = () => {
   ];
 
   const handleClose = () => {
-    setError(undefined)
+    setError(undefined);
     setResult(undefined);
     setOpen(false);
   };
@@ -88,7 +88,7 @@ const Results = () => {
 
   const fetchResults = () => {
     setResult(undefined);
-    setError(undefined)
+    setError(undefined);
     var uri = "";
     switch (stream) {
       case "Bio":
@@ -110,7 +110,7 @@ const Results = () => {
         window.alert("Please select a stream");
         return;
     }
-    if(indexNo.length === 0) {
+    if (indexNo.length === 0) {
       window.alert("Please enter an index number");
       return;
     }
@@ -152,7 +152,12 @@ const Results = () => {
           <DialogTitle id="alert-dialog-title" style={{ textAlign: "center" }}>
             {"TDUSA Pilot Examination Results - " + examYear}
           </DialogTitle>
-          <DialogContent className="dialog-content">
+          <DialogContent>
+            <DialogContentText style={{textAlign:'center'}} id="alert-dialog-description">
+              <h1>Results will be released soon</h1>
+            </DialogContentText>
+          </DialogContent>
+          {/* <DialogContent className="dialog-content">
             <FormControl variant="standard">
               <TextField
                 style={{ margin: "10px" }}
@@ -251,11 +256,9 @@ const Results = () => {
             <Button variant="outlined" color="error" onClick={handleClose} autoFocus>
               Close
             </Button>
-          </DialogActions>
+          </DialogActions> */}
         </div>
-        <Box sx={{ width: "100%" }}>
-          {loading && <LinearProgress />}
-        </Box>
+        <Box sx={{ width: "100%" }}>{loading && <LinearProgress />}</Box>
       </Dialog>
     </div>
   );
