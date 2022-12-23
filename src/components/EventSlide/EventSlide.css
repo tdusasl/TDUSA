@@ -1,7 +1,6 @@
 .swiper {
   width: 80%;
   height: 76vh;
-  transition: background .3s;
 }
 .swiper-pagination-bullet {
   background-color: #FFF !important;
@@ -9,7 +8,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   color: white !important;
-  padding: 30px;
+  /* padding: 30px; */
   padding-top: 0;
 }
 .swiper-slide {
@@ -41,6 +40,7 @@
 }
 .view-more{
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .event-cont{
@@ -69,21 +69,13 @@
 .cont-light{
   background-color: white !important;
 }
-
-/* .event div img {
-  margin-top: 20px;
-  width: 38%;
-  height: 70%;
-} */
 .moment-img{
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
 }
 .moment-img img{
-  margin-top: 20px;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -106,21 +98,26 @@
 @media screen and (max-width: 576px) {
   .swiper {
     width: 100%;
-    height: 66vh;
-    border-radius: 10px;
-  }
-  .event div img {
-    width: 90%;
     height: 50vh;
   }
+  .swiper-button-next,
+.swiper-button-prev {
+  padding-left: -40px;
+  padding-right: -40px;
+}
+
+.moment-img img{
+  width: 100%;
+  height: 100%;
+}
   .event-cont{
     background-color:var(--color-primary);
     padding-top:0px ;
-    width: 90%;
+    width: 80%;
   }
 
   .slide-container {
-    padding: 20px;
+    padding: 10px;
   }
   .slide-container>div:nth-child(2){
     font-size: 1.5rem;

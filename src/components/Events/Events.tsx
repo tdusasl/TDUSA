@@ -27,7 +27,13 @@ const Events = () => {
   };
 
   const handleSetOpen = (key: any) => {
-    setOpen(!open);
+    setOpen(true);
+    setActiveId(key);
+    console.log(key);
+  };
+  
+  const handleSetClose = (key: any) => {
+    setOpen(false);
     setActiveId(key);
     console.log(key);
   };
@@ -118,7 +124,7 @@ const Events = () => {
                       {
                         <div>
                           <Button
-                            onClick={() => handleSetOpen(key)}
+                            onClick={() => handleSetClose(key)}
                             style={
                               activeId !== key && open
                                 ? { display: "none" }
