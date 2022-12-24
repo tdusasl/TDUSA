@@ -2,7 +2,7 @@
   "name": "tdusa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://akshayn10.github.io/TDUSA",
+  "homepage": "https://tdusasl.org",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
