@@ -30,7 +30,9 @@ const Footer = () => {
           </div>
           <div className="contact-section">
             <h3>E-MAIL US</h3>
-            <p>tdusasl@gmail.com</p>
+            <p>
+              <a href="mailto:tdusa.sl@gmail.com">tdusasl@gmail.com</a>
+            </p>
             <h3>CALL US</h3>
             <p>+94 760075370</p>
           </div>
@@ -41,8 +43,12 @@ const Footer = () => {
             <div></div>
           </div>
           <div className="social-media-container">
+          <a target="_blank" href="https://www.facebook.com/tdusa" rel="noreferrer">
             <FaFacebook />
+            </a>
+            <a target="_blank" href="https://www.youtube.com/@learnthroughtdusa4758" rel="noreferrer">
             <AiOutlineYoutube />
+            </a>
           </div>
           <div className="item-title review-section">
             <p>GIVE A REVIEW</p>

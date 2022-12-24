@@ -14,12 +14,17 @@ const Structure = () => {
   const { theme } = useContext(ThemeContext);
   const [executiveCommittee, setExecutiveCommittee] = useState<any>([]);
   const committeeUri = process.env.REACT_APP_COMITTEE_MEMBERS!;
-  const auditor = process.env.REACT_APP_AUDITOR!;
+  const auditor = process.env.REACT_APP_AUDITOR?.split(",")!;
   const patrons = process.env.REACT_APP_PATRONS?.split(",")!;
+  const patronsImg = process.env.REACT_APP_PATRONSIMG?.split(",")!;
   const monitoringCommittee1 =
     process.env.REACT_APP_MONITORING_COMMITEE_1?.split(",")!;
+  const monitoringCommittee1Img =
+    process.env.REACT_APP_MONITORING_COMMITEE_1IMG?.split(",")!;
   const monitoringCommittee2 =
     process.env.REACT_APP_MONITORING_COMMITEE_2?.split(",")!;
+  const monitoringCommittee2Img =
+    process.env.REACT_APP_MONITORING_COMMITEE_2IMG?.split(",")!;
   const structureRef = useNav("Structure");
   const fetchCommittee = () => {
     Papa.parse(committeeUri, {
@@ -46,7 +51,15 @@ const Structure = () => {
 
         <div className="structure-card">
           <div>
-            <div className={theme === "dark" ? "structure-child" : theme === "light" ? "structure-child-light" : ""}>
+            <div
+              className={
+                theme === "dark"
+                  ? "structure-child"
+                  : theme === "light"
+                  ? "structure-child-light"
+                  : ""
+              }
+            >
               <div>
                 <MdOutlinePeopleAlt style={{ marginTop: "17%" }} />
               </div>
@@ -67,7 +80,15 @@ const Structure = () => {
           </div>
 
           <div>
-            <div className={theme === "dark" ? "structure-child" : theme === "light" ? "structure-child-light" : ""}>
+            <div
+              className={
+                theme === "dark"
+                  ? "structure-child"
+                  : theme === "light"
+                  ? "structure-child-light"
+                  : ""
+              }
+            >
               <div>
                 <RiCalendarEventFill style={{ marginTop: "17%" }} />
               </div>
@@ -89,7 +110,15 @@ const Structure = () => {
             <div className="back-card"></div>
           </div>
           <div>
-            <div className={theme === "dark" ? "structure-child" : theme === "light" ? "structure-child-light" : ""}>
+            <div
+              className={
+                theme === "dark"
+                  ? "structure-child"
+                  : theme === "light"
+                  ? "structure-child-light"
+                  : ""
+              }
+            >
               <div>
                 <TbHeartHandshake style={{ marginTop: "17%" }} />
               </div>
@@ -120,7 +149,12 @@ const Structure = () => {
             <div className="committee">
               {patrons.map((item: any, key: any) => (
                 <div key={key}>
-                  <img width="80px" height="80px" src={profile} alt="" />
+                  <img
+                    width="80px"
+                    height="80px"
+                    src={patronsImg[key]}
+                    alt=""
+                  />
                   <div>{item}</div>
                 </div>
               ))}
@@ -146,7 +180,7 @@ const Structure = () => {
             <div className="monitorCommittee1">
               {monitoringCommittee1.map((item: any, key: any) => (
                 <div key={key}>
-                  <img width="80px" height="80px" src={profile} alt="" />
+                  <img width="80px" height="80px" src={monitoringCommittee1Img[key]?monitoringCommittee1Img[key]:profile} alt="" />
                   <div>{item}</div>
                 </div>
               ))}
@@ -155,7 +189,7 @@ const Structure = () => {
             <div className="monitorCommittee2">
               {monitoringCommittee2.map((item: any, key: any) => (
                 <div key={key}>
-                  <img width="80px" height="80px" src={profile} alt="" />
+                  <img width="80px" height="80px" src={monitoringCommittee2Img[key]?monitoringCommittee2Img[key]:profile} alt="" />
                   <div>{item}</div>
                 </div>
               ))}
@@ -165,9 +199,9 @@ const Structure = () => {
             <div className="header"> Auditor </div>
             <div className="committee">
               <div>
-                <img width="80px" height="80px" src={profile} alt="" />
+                <img width="80px" height="80px" src={auditor[1]} alt="" />
 
-                <div>{auditor}</div>
+                <div>{auditor[0]}</div>
               </div>
             </div>
           </div>

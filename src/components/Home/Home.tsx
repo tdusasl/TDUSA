@@ -34,9 +34,15 @@ const Home = () => {
           <div className="results">
             <Results />
           </div>
+          <a target="_blank" href="https://www.facebook.com/tdusa" rel="noreferrer">
           <BsFacebook />
+          </a>
+          <a target="_blank" href="https://wa.me/94742821247?text=Hello!%20Welcome%20to%20TDUSA" rel="noreferrer">
           <BsWhatsapp />
+          </a>
+          <a href = "mailto:tdusa.sl@gmail.com">
           <MdMailOutline />
+          </a>
           <div className="donate">
             <Donate />
           </div>
