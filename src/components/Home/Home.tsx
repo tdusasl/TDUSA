@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <div className="home">
         <div className="typewriter">
-          <div>27 YEARS OF</div>
+          <div>28 YEARS OF</div>
           <Typewriter
             options={{
               loop: true,

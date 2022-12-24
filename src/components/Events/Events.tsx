@@ -22,10 +22,6 @@ const Events = () => {
     content: "hello",
     height: "400px",
   };
-  const expandButton = {
-    visibility: "hidden",
-  };
-
   const handleSetOpen = (key: any) => {
     setOpen(true);
     setActiveId(key);
@@ -48,7 +44,7 @@ const Events = () => {
     });
   };
   const showAllEvents = () => {
-    if (numberOfEventsToDisplay + 3 < events.length) {
+    if (numberOfEventsToDisplay + 3 <= events.length) {
       setNumberOfEventsToDisplay(numberOfEventsToDisplay + 3);
     }
   };
@@ -136,12 +132,9 @@ const Events = () => {
                           </Button>
                         </div>
                       }
-                      <img
-                        loading="lazy"
-                        className="eventImg"
-                        src={item.photo}
-                        alt=""
-                      />
+                      <p className="event-desc">
+                        {item.description}
+                      </p>
                     </div>
                   )}
                 </div>
@@ -149,9 +142,9 @@ const Events = () => {
             ))}
         </VerticalTimeline>
       </div>
-      <button className="button" onClick={showAllEvents}>
+      {numberOfEventsToDisplay<events.length && <button className="button" onClick={showAllEvents}>
         Show more
-      </button>
+      </button>}
     </div>
   );
 };

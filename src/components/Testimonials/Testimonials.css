@@ -4,6 +4,7 @@
 }
 .testimonials{
     margin-top: 25px;
+    font-size: 0.9rem;
 }
 .swiper .content-wrapper {
     position: relative;
@@ -33,6 +34,7 @@
 .swiper .content-wrapper .content .cite {
     font-size: 10px;
     font-weight: bold;
+    text-align: center;
 }
 .swiper .swiper-slide {
     margin: 0;
@@ -75,4 +77,16 @@
 .swiper-pagination-bullet-active {
     transform: scale(1.5);
     background: #000 !important;
+}
+
+@media screen and (max-width: 576px) {
+
+
+.testimonials p{
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+    padding: 10px;
+    text-align: justify;
+
+}
 }

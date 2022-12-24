@@ -39,11 +39,8 @@ const EventSlide = () => {
     // eslint-disable-next-line
   }, []);
 
-  const [showMore, setShowMore] = useState(false);
   const { theme } = useContext(ThemeContext);
-  const handleShowMore = () => {
-    setShowMore(!showMore);
-  };
+
   const showMoreMoments = () => {
     if (numberOfMomentsToDisplay + 2 <= moments.length) {
       setNumberOfMomentsToDisplay(numberOfMomentsToDisplay + 2);

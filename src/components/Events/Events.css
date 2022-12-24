@@ -8,13 +8,14 @@
   transition: 0.9s;
   font-weight: bolder;
 }
+.vertical-timeline-element-content p{
+  /* font-size: 0.75rem; */
+  line-height:1em;
+}
 .button:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary);
   font-size: large;
-}
-.expand-button{
-  visibility: hidden;
 }
 .container {
   overflow: hidden;
@@ -22,13 +23,13 @@
   transition: all 500ms ease-in-out;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-/* .vertical-timeline-element{
-  height: 500px;
+.lower{
+  height : 300px;
+  width: 100%;
 }
-.vertical-timeline-element--work{
-  height: 500px;
-} */
-
+.event-desc{
+  font-size: 0.75rem;
+}
 .upper {
   height: 200px;
 }
@@ -40,10 +41,6 @@
   margin-top: -30px;
 }
 
-.lower .eventImg{
-  height: 90%;
-  width: 50%;
-}
 
 
 @media screen and (max-width: 576px) {
@@ -53,12 +50,13 @@
   .timeline {
     margin-left: 20px;
   }
-  .lower .eventImg{
-    height: 100%;
-    width: 100%;
-  }
+
   .upper img{
     height: 90%;
     width: 90%;
+  }
+  .vertical-timeline-element-content p{
+    font-size: 0.65rem;
+    line-height: 0.6rem;
   }
 }

@@ -1,8 +1,7 @@
 .swiper {
   width: 95%;
   height: 76vh;
-  border-radius: 10px;
-
+  border-radius: 25px;
 }
 .swiper-pagination-bullet {
   background-color: #FFF !important;
@@ -46,6 +45,7 @@
 }
 
 .event-cont{
+  border-radius: 25px;
   background-color: #202c3c;
   padding-top:30px ;
   padding-bottom:30px ;

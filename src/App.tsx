@@ -155,9 +155,9 @@ function App() {
         <Events />
         {/* <EventCalendar/> */}
         <Vizhuthuhal />
-        <div className="book-container">
+        {/* <div className="book-container">
           book
-        </div>
+        </div> */}
         <EventSlide />
         <Structure />
         <PastPapers />
