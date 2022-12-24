@@ -125,8 +125,8 @@ const Structure = () => {
               <div>
                 <div>
                   <CountUp
-                    scrollSpyOnce={true}
-                    enableScrollSpy={true}
+                    // scrollSpyOnce={true}
+                    // enableScrollSpy={true}
                     scrollSpyDelay={1000}
                     start={2022}
                     end={1995}
