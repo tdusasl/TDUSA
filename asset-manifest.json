@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/TDUSA/static/css/main.74bee850.css",
-    "main.js": "/TDUSA/static/js/main.ce7944f0.js",
-    "static/js/787.652e0442.chunk.js": "/TDUSA/static/js/787.652e0442.chunk.js",
-    "static/media/logo.png": "/TDUSA/static/media/logo.8fe6a3d2f6c42b15d0a7.png",
-    "static/media/hands.png": "/TDUSA/static/media/hands.e369182fafe5c96e4684.png",
-    "static/media/muraleetharan.jpeg": "/TDUSA/static/media/muraleetharan.a041042d8c61474b7de1.jpeg",
-    "index.html": "/TDUSA/index.html",
-    "main.74bee850.css.map": "/TDUSA/static/css/main.74bee850.css.map",
-    "main.ce7944f0.js.map": "/TDUSA/static/js/main.ce7944f0.js.map",
-    "787.652e0442.chunk.js.map": "/TDUSA/static/js/787.652e0442.chunk.js.map"
+    "main.css": "/static/css/main.74bee850.css",
+    "main.js": "/static/js/main.eb3c3b64.js",
+    "static/js/787.652e0442.chunk.js": "/static/js/787.652e0442.chunk.js",
+    "static/media/logo.png": "/static/media/logo.8fe6a3d2f6c42b15d0a7.png",
+    "static/media/hands.png": "/static/media/hands.e369182fafe5c96e4684.png",
+    "static/media/muraleetharan.jpeg": "/static/media/muraleetharan.a041042d8c61474b7de1.jpeg",
+    "index.html": "/index.html",
+    "main.74bee850.css.map": "/static/css/main.74bee850.css.map",
+    "main.eb3c3b64.js.map": "/static/js/main.eb3c3b64.js.map",
+    "787.652e0442.chunk.js.map": "/static/js/787.652e0442.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.74bee850.css",
-    "static/js/main.ce7944f0.js"
+    "static/js/main.eb3c3b64.js"
   ]
 }
