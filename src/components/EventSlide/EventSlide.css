@@ -1,6 +1,8 @@
 .swiper {
-  width: 80%;
+  width: 95%;
   height: 76vh;
+  border-radius: 10px;
+
 }
 .swiper-pagination-bullet {
   background-color: #FFF !important;
@@ -47,14 +49,14 @@
   background-color: #202c3c;
   padding-top:30px ;
   padding-bottom:30px ;
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
 }
 .event-cont-light{
   background-color: white;
   padding-top:30px ;
   padding-bottom:30px ;
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
 }
 @keyframes fadeIn {
