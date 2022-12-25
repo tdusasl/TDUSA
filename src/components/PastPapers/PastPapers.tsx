@@ -29,6 +29,7 @@ const PastPapers = () => {
       <div className="card-container">
         {pastPapers.map((item: any, key: any) => (
           <div key={key} className="card">
+            <a href={item.paperLink} target="_blank" rel="noreferrer">
             <h3 className="title">{item.stream}</h3>
             <div className="bar">
               <div className="emptybar"></div>
@@ -39,6 +40,7 @@ const PastPapers = () => {
                 <circle className="stroke" cx="60" cy="60" r="50" />
               </svg>
             </div>
+            </a>
           </div>
         ))}
       </div>

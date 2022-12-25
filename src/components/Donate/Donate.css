@@ -4,3 +4,24 @@
     border-radius: 40px;
 
 }
+.donate-content{
+    font-family: var(--font-primary);
+    padding: 20px;
+    display: flex;
+    text-align: center;
+}
+.donate-content .donate-text{
+    font-size: 1.2rem;
+    font-weight:bolder;
+}
+.donate-content .donate-text a{
+    color: black;
+}
+.donate-content .donate-icon{
+    font-size: 6rem;
+}
+@media screen and (max-width: 576px) {
+    .donate-content{
+        flex-direction: column;
+    }
+}

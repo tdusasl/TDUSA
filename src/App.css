@@ -1,5 +1,4 @@
 
-
 .App {
   margin: 0;
   text-align: center;
@@ -14,12 +13,35 @@
   opacity: 0.5;
   margin-top: 80px;
 }
+.App a {
+  text-decoration: none;
+  color: white;
+}
+.App-light a {
+  text-decoration: none;
+  color: black;
+}
+a :link{
+  text-decoration: none;
+}
+.App a:visited{
+  color:white;
+}
+.App a:active {
+  color: white;
+}
 .App-light {
   margin: 0;
   text-align: center;
   background-color: white;
   color: black;
   font-family: var(--font-primary);
+}
+.App-light a:visited{
+  color:black;
+}
+.App-light a:active {
+  color: black;
 }
 .loader{
   width:500px;
@@ -28,8 +50,12 @@
   
 }
 .book-container{
-  height: 100px;
-  background-color: yellow;
+  height: 100vh;
+}
+.book-container img{
+  height: 80%;
+  width: 96%;
+  object-fit: cover;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -55,9 +81,25 @@
 a {
   text-decoration: none;
 }
-
+a :link{
+  text-decoration: none;
+}
+a:visited{
+  color:white;
+}
+a:active {
+  color: white;
+}
 @media screen and (max-width: 576px) {
   .particles{
     height: 300px;
+  }
+  .book-container{
+    height: 30vh;
+  }
+  .book-container img{
+    height: 80%;
+    width: 90%;
+    object-fit: cover;
   }
 }

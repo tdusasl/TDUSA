@@ -155,9 +155,14 @@ function App() {
         <Events />
         {/* <EventCalendar/> */}
         <Vizhuthuhal />
-        {/* <div className="book-container">
-          book
-        </div> */}
+        <div className="book-container">
+        <div className="content-title">
+          <p>THIGAZHOZHI</p>
+          <div></div>
+        </div>
+          <img src="https://tdusaimages.blob.core.windows.net/eventimgs/book.gif" alt="Book" />
+        <p><a href="https://drive.google.com/drive/folders/1M9Naha--CE4kdcpD_5UbjW8R2kJRGe3W?usp=sharing" target='_blank' rel="noreferrer" >GET YOUR E-BOOK HERE</a></p>
+        </div>
         <EventSlide />
         <Structure />
         <PastPapers />
