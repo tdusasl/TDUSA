@@ -19,9 +19,15 @@ const Results = () => {
   const bioResultUri = process.env.REACT_APP_RESULTS_BIO!;
   const mathsResultUri = process.env.REACT_APP_RESULTS_MATHS!;
   const commerceResultUri = process.env.REACT_APP_RESULTS_COMMERCE!;
-  const technologyResultUri = process.env.REACT_APP_RESULTS_TECHNOLOGY!;
-  const artsResultUri = process.env.REACT_APP_RESULTS_ARTS!;
-  const [result, setResult] = useState<Result["data"]>();
+  const eTechnologyResultUri = process.env.REACT_APP_RESULTS_ETECHNOLOGY!;
+  const bioTechnologyResultUri = process.env.REACT_APP_RESULTS_BTECHNOLOGY!;
+  const [bioResult, setBioResult] = useState<BioResult["data"]>();
+  const [mathsResult, setMathsResult] = useState<MathsResult["data"]>();
+  const [commerceResult, setCommerceResult] = useState<ComResult["data"]>();
+  const [eTechnologyResult, setETechnologyResult] =
+    useState<ETechResult["data"]>();
+  const [bioTechnologyResult, setBioTechnologyResult] =
+    useState<BTechResult["data"]>();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>();
@@ -31,6 +37,7 @@ const Results = () => {
 
   const handleStreamChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setStream(event.target.value);
+    setIndexNo("");
   };
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIndexNo(event.target.value);
@@ -53,58 +60,188 @@ const Results = () => {
       label: "Commerce",
     },
     {
-      value: "Arts",
-      label: "Arts",
+      value: "BioTechnology",
+      label: "Bio Technology",
     },
     {
-      value: "Technology",
-      label: "Technology",
+      value: "ETechnology",
+      label: "E Technology",
     },
   ];
 
+  const setResultsUndefined = () => {
+    setBioResult(undefined);
+    setMathsResult(undefined);
+    setCommerceResult(undefined);
+    setETechnologyResult(undefined);
+    setBioTechnologyResult(undefined);
+  };
   const handleClose = () => {
     setError(undefined);
-    setResult(undefined);
+    setResultsUndefined();
     setOpen(false);
   };
-  interface Result {
+  interface BioResult {
     data: {
       Name: string;
       IndexNo: string;
-      School: string;
-      Stream: string;
       Biology: string;
+      Chemistry: string;
+      Physics: string;
+      Rank: string;
+      ZScore: string;
+    };
+  }
+  interface MathsResult {
+    data: {
+      Name: string;
+      IndexNo: string;
       Chemistry: string;
       Mathematics: string;
       Physics: string;
+      Rank: string;
+      ZScore: string;
+    };
+  }
+  interface ComResult {
+    data: {
+      Name: string;
+      IndexNo: string;
       Economics: string;
       BusinessStudies: string;
-      InformationTechnology: string;
       Accounting: string;
+      Rank: string;
+    };
+  }
+  interface ETechResult {
+    data: {
+      Name: string;
+      IndexNo: string;
+      AGorICTorMath: string;
+      SFT: string;
+      ETech: string;
+      Rank: string;
+      ZScore: string;
+    };
+  }
+  interface BTechResult {
+    data: {
+      Name: string;
+      IndexNo: string;
+      ICTorAGRI: string;
+      SFT: string;
+      BTech: string;
       Rank: string;
       ZScore: string;
     };
   }
 
   const fetchResults = () => {
-    setResult(undefined);
+    setResultsUndefined();
     setError(undefined);
     var uri = "";
     switch (stream) {
       case "Bio":
         uri = bioResultUri;
+        setLoading(true);
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: BioResult, parser) {
+            // console.log(row.data.IndexNo,'', indexNo);
+            if (row.data.IndexNo === indexNo) {
+              setBioResult(row.data);
+              setLoading(false);
+              parser.abort();
+              console.log(bioResult);
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            setError("No results found for this index number");
+          },
+        });
         break;
       case "Maths":
         uri = mathsResultUri;
+        setLoading(true);
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: MathsResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              setMathsResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            setError("No results found for this index number");
+          },
+        });
         break;
       case "Commerce":
         uri = commerceResultUri;
+        setLoading(true);
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: ComResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              setCommerceResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            setError("No results found for this index number");
+          },
+        });
         break;
-      case "Arts":
-        uri = artsResultUri;
+      case "BioTechnology":
+        uri = bioTechnologyResultUri;
+        setLoading(true);
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: BTechResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              setBioTechnologyResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            setError("No results found for this index number");
+          },
+        });
         break;
-      case "Technology":
-        uri = technologyResultUri;
+      case "ETechnology":
+        uri = eTechnologyResultUri;
+        setLoading(true);
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: ETechResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              setETechnologyResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            setError("No results found for this index number");
+          },
+        });
         break;
       default:
         window.alert("Please select a stream");
@@ -115,26 +252,27 @@ const Results = () => {
       return;
     }
     setLoading(true);
-    Papa.parse(uri, {
-      download: true,
-      header: true,
-      step: function (row: Result, parser) {
-        if (row.data.IndexNo === indexNo) {
-          setResult(row.data);
-          setLoading(false);
-          parser.abort();
-        }
-      },
-      complete: function (results) {
-        setLoading(false);
-        console.log("Fetched all Data");
-        setError("No results found for this index number");
-      },
-    });
+    //   Papa.parse(uri, {
+    //     download: true,
+    //     header: true,
+    //     step: function (row: Result, parser) {
+    //       if (row.data.IndexNo === indexNo) {
+    //         setResult(row.data);
+    //         setLoading(false);
+    //         parser.abort();
+    //       }
+    //     },
+    //     complete: function (results) {
+    //       setLoading(false);
+    //       console.log("Fetched all Data");
+    //       setError("No results found for this index number");
+    //     },
+    //   });
+    // };
   };
   useEffect(() => {
     // eslint-disable-next-line
-  }, []);
+  }, [stream]);
 
   return (
     <div className="result-container">
@@ -153,11 +291,11 @@ const Results = () => {
             {"TDUSA Pilot Examination Results - " + examYear}
           </DialogTitle>
           <DialogContent>
-            <DialogContentText style={{textAlign:'center'}} id="alert-dialog-description">
+            {/* <DialogContentText style={{textAlign:'center'}} id="alert-dialog-description">
               <h1>Results will be released soon</h1>
-            </DialogContentText>
+            </DialogContentText> */}
           </DialogContent>
-          {/* <DialogContent className="dialog-content">
+          <DialogContent className="dialog-content">
             <FormControl variant="standard">
               <TextField
                 style={{ margin: "10px" }}
@@ -184,79 +322,203 @@ const Results = () => {
                 onChange={handleInputChange}
               />
             </FormControl>
-            {(error&&!result) && <div className="result-error">{error}</div>}
+            {error &&
+              !(
+                bioResult ||
+                mathsResult ||
+                commerceResult ||
+                eTechnologyResult ||
+                bioTechnologyResult
+              ) && <div className="result-error">{error}</div>}
 
             <DialogContentText id="alert-dialog-description"></DialogContentText>
-            {result && (
+            {bioResult && (
               <div className="result">
                 <div>
-                  <div>Stream :</div> {result?.Stream}
+                  <div>Stream :</div> Biology
                 </div>
                 <div>
-                  <div>Name :</div> {result?.Name}
+                  <div>Name :</div> {bioResult?.Name}
                 </div>
                 <div>
-                  <div>IndexNo :</div> {result?.IndexNo}
+                  <div>IndexNo :</div> {bioResult?.IndexNo}
                 </div>
-                {result?.Biology && (
+                {bioResult?.Biology && (
                   <div>
-                    <div>Biology :</div> {result?.Biology}
+                    <div>Biology :</div> {bioResult?.Biology}
                   </div>
                 )}
-                {result?.Chemistry && (
+                {bioResult?.Chemistry && (
                   <div>
-                    <div>Chemistry :</div> {result?.Chemistry}
+                    <div>Chemistry :</div> {bioResult?.Chemistry}
                   </div>
                 )}
-                {result?.Mathematics && (
+                {bioResult?.Physics && (
                   <div>
-                    <div>Mathematics :</div> {result?.Mathematics}
+                    <div>Physics :</div> {bioResult?.Physics}
                   </div>
                 )}
-                {result?.Physics && (
+                {bioResult?.Rank && (
                   <div>
-                    <div>Physics :</div> {result?.Physics}
+                    <div>Rank :</div> {bioResult?.Rank}
                   </div>
                 )}
-                {result?.Economics && (
+                {bioResult?.ZScore && (
                   <div>
-                    <div>Economics :</div> {result?.Economics}
+                    <div>Z-Score :</div> {bioResult?.ZScore}
                   </div>
                 )}
-                {result?.BusinessStudies && (
-                  <div>
-                    <div>BusinessStudies :</div> {result?.BusinessStudies}
-                  </div>
-                )}
-                {result?.InformationTechnology && (
-                  <div>
-                    <div>InformationTechnology :</div>{" "}
-                    {result?.InformationTechnology}
-                  </div>
-                )}
-                {result?.Accounting && (
-                  <div>
-                    <div>Accounting :</div> {result?.Accounting}
-                  </div>
-                )}
-                {result?.Rank && (
-                  <div>
-                    <div>Rank :</div> {result?.Rank}
-                  </div>
-                )}
+              </div>
+            )}
+            {mathsResult && (
+              <div className="result">
                 <div>
-                  <div>ZScore :</div>
-                  {result?.ZScore}
+                  <div>Stream :</div> Physical Science
                 </div>
+                <div>
+                  <div>Name :</div> {mathsResult?.Name}
+                </div>
+                {mathsResult?.Mathematics && (
+                  <div>
+                    <div>Mathematics :</div> {mathsResult?.Mathematics}
+                  </div>
+                )}
+                {mathsResult?.Physics && (
+                  <div>
+                    <div>Physics :</div> {mathsResult?.Physics}
+                  </div>
+                )}
+                {mathsResult?.Chemistry && (
+                  <div>
+                    <div>Chemistry :</div> {mathsResult?.Chemistry}
+                  </div>
+                )}
+                {mathsResult?.Rank && (
+                  <div>
+                    <div>Rank :</div> {mathsResult?.Rank}
+                  </div>
+                )}
+                {mathsResult?.ZScore && (
+                  <div>
+                    <div>Z-Score :</div> {mathsResult?.ZScore}
+                  </div>
+                )}
+              </div>
+            )}
+            {commerceResult && (
+              <div className="result">
+                <div>
+                  <div>Stream :</div> Commerce
+                </div>
+                <div>
+                  <div>Name :</div> {commerceResult?.Name}
+                </div>
+                {commerceResult?.Economics && (
+                  <div>
+                    <div>Economics :</div> {commerceResult?.Economics}
+                  </div>
+                )}
+                {commerceResult?.BusinessStudies && (
+                  <div>
+                    <div>Business Studies :</div> {commerceResult?.BusinessStudies}
+                  </div>
+                )}
+                {commerceResult?.Accounting && (
+                  <div>
+                    <div>Accounting :</div> {commerceResult?.Accounting}
+                  </div>
+                )}
+                {commerceResult?.Rank && (
+                  <div>
+                    <div>Rank :</div> {commerceResult?.Rank}
+                  </div>
+                )}
+              </div>
+            )}
+            {bioTechnologyResult && (
+              <div className="result">
+                <div>
+                  <div>Stream :</div> Bio Technology
+                </div>
+                <div>
+                  <div>Name :</div> {bioTechnologyResult?.Name}
+                </div>
+                {bioTechnologyResult?.BTech && (
+                  <div>
+                    <div>Bio Technology :</div> {bioTechnologyResult?.BTech}
+                  </div>
+                )}
+                {bioTechnologyResult?.SFT && (
+                  <div>
+                    <div>Science for Tech :</div> {bioTechnologyResult?.SFT}
+                  </div>
+                )}
+                {bioTechnologyResult?.ICTorAGRI && (
+                  <div>
+                    <div>I.C.T or Agriculture :</div> {bioTechnologyResult?.ICTorAGRI}
+                  </div>
+                )}
+                {bioTechnologyResult?.Rank && (
+                  <div>
+                    <div>Rank :</div> {bioTechnologyResult?.Rank}
+                  </div>
+                )}
+                 {bioTechnologyResult?.ZScore && (
+                  <div>
+                    <div>Z-Score :</div> {bioTechnologyResult?.ZScore}
+                  </div>
+                )}
+              </div>
+            )}
+            {eTechnologyResult && (
+              <div className="result">
+                <div>
+                  <div>Stream :</div> Engineering Technology
+                </div>
+                <div>
+                  <div>Name :</div> {eTechnologyResult?.Name}
+                </div>
+                {eTechnologyResult?.ETech && (
+                  <div>
+                    <div>Engineering Technology :</div> {eTechnologyResult?.ETech}
+                  </div>
+                )}
+                {eTechnologyResult?.SFT && (
+                  <div>
+                    <div>Science for Tech :</div> {eTechnologyResult?.SFT}
+                  </div>
+                )}
+                {eTechnologyResult?.AGorICTorMath && (
+                  <div>
+                    <div>I.C.T or Agriculture or Maths :</div> {eTechnologyResult?.AGorICTorMath}
+                  </div>
+                )}
+                {eTechnologyResult?.Rank && (
+                  <div>
+                    <div>Rank :</div> {eTechnologyResult?.Rank}
+                  </div>
+                )}
+                 {eTechnologyResult?.ZScore && (
+                  <div>
+                    <div>Z-Score :</div> {eTechnologyResult?.ZScore}
+                  </div>
+                )}
               </div>
             )}
           </DialogContent>
           <DialogActions>
-            <Button variant="outlined" onClick={fetchResults}>Submit</Button>
-            <Button variant="outlined" color="error" onClick={handleClose} autoFocus>
+            <Button variant="outlined" onClick={fetchResults}>
+              Submit
+            </Button>
+            <Button
+              variant="outlined"
+              color="error"
+              onClick={handleClose}
+              autoFocus
+            >
               Close
             </Button>
-          </DialogActions> */}
+          </DialogActions>
         </div>
         <Box sx={{ width: "100%" }}>{loading && <LinearProgress />}</Box>
       </Dialog>
