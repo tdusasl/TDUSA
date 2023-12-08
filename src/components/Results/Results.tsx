@@ -19,15 +19,15 @@ const Results = () => {
   const bioResultUri = process.env.REACT_APP_RESULTS_BIO!;
   const mathsResultUri = process.env.REACT_APP_RESULTS_MATHS!;
   const commerceResultUri = process.env.REACT_APP_RESULTS_COMMERCE!;
-  const eTechnologyResultUri = process.env.REACT_APP_RESULTS_ETECHNOLOGY!;
-  const bioTechnologyResultUri = process.env.REACT_APP_RESULTS_BTECHNOLOGY!;
+  // const eTechnologyResultUri = process.env.REACT_APP_RESULTS_ETECHNOLOGY!;
+  // const bioTechnologyResultUri = process.env.REACT_APP_RESULTS_BTECHNOLOGY!;
   const [bioResult, setBioResult] = useState<BioResult["data"]>();
   const [mathsResult, setMathsResult] = useState<MathsResult["data"]>();
   const [commerceResult, setCommerceResult] = useState<ComResult["data"]>();
-  const [eTechnologyResult, setETechnologyResult] =
-    useState<ETechResult["data"]>();
-  const [bioTechnologyResult, setBioTechnologyResult] =
-    useState<BTechResult["data"]>();
+  // const [eTechnologyResult, setETechnologyResult] =
+  //   useState<ETechResult["data"]>();
+  // const [bioTechnologyResult, setBioTechnologyResult] =
+  //   useState<BTechResult["data"]>();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>();
@@ -59,22 +59,22 @@ const Results = () => {
       value: "Commerce",
       label: "Commerce",
     },
-    {
-      value: "BioTechnology",
-      label: "Bio Technology",
-    },
-    {
-      value: "ETechnology",
-      label: "E Technology",
-    },
+    // {
+    //   value: "BioTechnology",
+    //   label: "Bio Technology",
+    // },
+    // {
+    //   value: "ETechnology",
+    //   label: "E Technology",
+    // },
   ];
 
   const setResultsUndefined = () => {
     setBioResult(undefined);
     setMathsResult(undefined);
     setCommerceResult(undefined);
-    setETechnologyResult(undefined);
-    setBioTechnologyResult(undefined);
+    // setETechnologyResult(undefined);
+    // setBioTechnologyResult(undefined);
   };
   const handleClose = () => {
     setError(undefined);
@@ -113,28 +113,28 @@ const Results = () => {
       Rank: string;
     };
   }
-  interface ETechResult {
-    data: {
-      Name: string;
-      IndexNo: string;
-      AGorICTorMath: string;
-      SFT: string;
-      ETech: string;
-      Rank: string;
-      ZScore: string;
-    };
-  }
-  interface BTechResult {
-    data: {
-      Name: string;
-      IndexNo: string;
-      ICTorAGRI: string;
-      SFT: string;
-      BTech: string;
-      Rank: string;
-      ZScore: string;
-    };
-  }
+  // interface ETechResult {
+  //   data: {
+  //     Name: string;
+  //     IndexNo: string;
+  //     AGorICTorMath: string;
+  //     SFT: string;
+  //     ETech: string;
+  //     Rank: string;
+  //     ZScore: string;
+  //   };
+  // }
+  // interface BTechResult {
+  //   data: {
+  //     Name: string;
+  //     IndexNo: string;
+  //     ICTorAGRI: string;
+  //     SFT: string;
+  //     BTech: string;
+  //     Rank: string;
+  //     ZScore: string;
+  //   };
+  // }
 
   const fetchResults = () => {
     setResultsUndefined();
@@ -203,46 +203,46 @@ const Results = () => {
           },
         });
         break;
-      case "BioTechnology":
-        uri = bioTechnologyResultUri;
-        setLoading(true);
-        Papa.parse(uri, {
-          download: true,
-          header: true,
-          step: function (row: BTechResult, parser) {
-            if (row.data.IndexNo === indexNo) {
-              setBioTechnologyResult(row.data);
-              setLoading(false);
-              parser.abort();
-            }
-          },
-          complete: function (results) {
-            setLoading(false);
-            console.log("Fetched all Data");
-            setError("No results found for this index number");
-          },
-        });
-        break;
-      case "ETechnology":
-        uri = eTechnologyResultUri;
-        setLoading(true);
-        Papa.parse(uri, {
-          download: true,
-          header: true,
-          step: function (row: ETechResult, parser) {
-            if (row.data.IndexNo === indexNo) {
-              setETechnologyResult(row.data);
-              setLoading(false);
-              parser.abort();
-            }
-          },
-          complete: function (results) {
-            setLoading(false);
-            console.log("Fetched all Data");
-            setError("No results found for this index number");
-          },
-        });
-        break;
+      // case "BioTechnology":
+      //   uri = bioTechnologyResultUri;
+      //   setLoading(true);
+      //   Papa.parse(uri, {
+      //     download: true,
+      //     header: true,
+      //     step: function (row: BTechResult, parser) {
+      //       if (row.data.IndexNo === indexNo) {
+      //         setBioTechnologyResult(row.data);
+      //         setLoading(false);
+      //         parser.abort();
+      //       }
+      //     },
+      //     complete: function (results) {
+      //       setLoading(false);
+      //       console.log("Fetched all Data");
+      //       setError("No results found for this index number");
+      //     },
+      //   });
+      //   break;
+      // case "ETechnology":
+      //   uri = eTechnologyResultUri;
+      //   setLoading(true);
+      //   Papa.parse(uri, {
+      //     download: true,
+      //     header: true,
+      //     step: function (row: ETechResult, parser) {
+      //       if (row.data.IndexNo === indexNo) {
+      //         setETechnologyResult(row.data);
+      //         setLoading(false);
+      //         parser.abort();
+      //       }
+      //     },
+      //     complete: function (results) {
+      //       setLoading(false);
+      //       console.log("Fetched all Data");
+      //       setError("No results found for this index number");
+      //     },
+      //   });
+      //   break;
       default:
         window.alert("Please select a stream");
         return;
@@ -322,13 +322,19 @@ const Results = () => {
                 onChange={handleInputChange}
               />
             </FormControl>
-            {error &&
+            {/* {error &&
               !(
                 bioResult ||
                 mathsResult ||
                 commerceResult ||
                 eTechnologyResult ||
                 bioTechnologyResult
+              ) && <div className="result-error">{error}</div>} */}
+                          {error &&
+              !(
+                bioResult ||
+                mathsResult ||
+                commerceResult
               ) && <div className="result-error">{error}</div>}
 
             <DialogContentText id="alert-dialog-description"></DialogContentText>
@@ -435,7 +441,7 @@ const Results = () => {
                 )}
               </div>
             )}
-            {bioTechnologyResult && (
+            {/* {bioTechnologyResult && (
               <div className="result">
                 <div>
                   <div>Stream :</div> Bio Technology
@@ -469,8 +475,8 @@ const Results = () => {
                   </div>
                 )}
               </div>
-            )}
-            {eTechnologyResult && (
+            )} */}
+            {/* {eTechnologyResult && (
               <div className="result">
                 <div>
                   <div>Stream :</div> Engineering Technology
@@ -504,7 +510,7 @@ const Results = () => {
                   </div>
                 )}
               </div>
-            )}
+            )} */}
           </DialogContent>
           <DialogActions>
             <Button variant="outlined" onClick={fetchResults}>
