@@ -77,7 +77,7 @@ const Footer = () => {
         <MdOutlineCopyright className="copyright" />
         <div>
           All Rights Reserved By Trincomalee District University Students'
-          Association. 2022
+          Association. 2025
         </div>
       </div>
     </div>
