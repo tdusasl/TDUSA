@@ -21,11 +21,13 @@ const Results = () => {
   const commerceResultUri = process.env.REACT_APP_RESULTS_COMMERCE!;
   const eTechnologyResultUri = process.env.REACT_APP_RESULTS_ETECHNOLOGY!;
   const bioTechnologyResultUri = process.env.REACT_APP_RESULTS_BTECHNOLOGY!;
+  const artsResultUri = process.env.REACT_APP_RESULTS_ARTS!;
   const [bioResult, setBioResult] = useState<BioResult["data"]>();
   const [mathsResult, setMathsResult] = useState<MathsResult["data"]>();
   const [commerceResult, setCommerceResult] = useState<ComResult["data"]>();
   const [eTechnologyResult, setETechnologyResult] = useState<ETechResult["data"]>();
   const [bioTechnologyResult, setBioTechnologyResult] =useState<BTechResult["data"]>();
+  const [artsResult, setArtsResult] =useState<ArtsResult["data"]>();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>();
@@ -65,6 +67,10 @@ const Results = () => {
       value: "ETechnology",
       label: "E Technology",
     },
+    {
+      value: "Arts",
+      label: "Arts",
+    },
   ];
 
   const setResultsUndefined = () => {
@@ -73,6 +79,7 @@ const Results = () => {
     setCommerceResult(undefined);
     setETechnologyResult(undefined);
     // setBioTechnologyResult(undefined);
+    setArtsResult(undefined);
   };
   const handleClose = () => {
     setError(undefined);
@@ -109,6 +116,8 @@ const Results = () => {
       Economics: string;
       BusinessStudies: string;
       Accounting: string;
+      ICT : string;
+      ZScore:string;
       Rank: string;
     };
   }
@@ -132,6 +141,20 @@ const Results = () => {
       OptionRes: string;
       SFT: string;
       Btech: string;
+      Rank: string;
+      ZScore: string;
+    };
+  }
+  interface ArtsResult {
+    data: {
+      Name: string;
+      IndexNo: string;
+      Tamil: string;
+      HCulture: string;
+      Geography: string;
+      Economics: string;
+      ICT: string;
+      Media: string;
       Rank: string;
       ZScore: string;
     };
@@ -246,6 +269,30 @@ const Results = () => {
             setLoading(false);
             console.log("Fetched all Data");
             if (!found) {
+              setError("No results found for this index number");}
+          },
+        });
+        break;
+
+        case "Arts":
+        uri = artsResultUri;
+        setLoading(true);
+        let found2 = false;
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: ArtsResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              found2 = true;
+              setArtsResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            if (!found2) {
               setError("No results found for this index number");}
           },
         });
@@ -429,6 +476,9 @@ const Results = () => {
                 <div>
                   <div>Name :</div> {commerceResult?.Name}
                 </div>
+                <div>
+                  <div>IndexNo :</div> {commerceResult?.IndexNo}
+                </div>
                 {commerceResult?.Economics && (
                   <div>
                     <div>Economics :</div> {commerceResult?.Economics}
@@ -444,9 +494,19 @@ const Results = () => {
                     <div>Accounting :</div> {commerceResult?.Accounting}
                   </div>
                 )}
+                {commerceResult?.ICT && (
+                  <div>
+                    <div>ICT :</div> {commerceResult?.ICT}
+                  </div>
+                )}
                 {commerceResult?.Rank && (
                   <div>
                     <div>Rank :</div> {commerceResult?.Rank}
+                  </div>
+                )}
+                {commerceResult?.ZScore && (
+                  <div>
+                    <div>Z-Score :</div> {commerceResult?.ZScore}
                   </div>
                 )}
               </div>
@@ -522,6 +582,48 @@ const Results = () => {
                  {eTechnologyResult?.ZScore && (
                   <div>
                     <div>Z-Score :</div> {eTechnologyResult?.ZScore}
+                  </div>
+                )}
+              </div>
+            )}
+            {artsResult && (
+              <div className="result">
+                <div>
+                  <div>Stream :</div> Arts</div>
+                <div>
+                  <div> Name :</div> {artsResult?.Name}
+                </div>
+                <div>
+                  <div>IndexNo :</div> {artsResult?.IndexNo}
+                </div>
+                {artsResult?.Tamil && (
+                  <div>
+                    <div>Tamil :</div> {artsResult?.Tamil}
+                  </div>
+                )}
+                {artsResult?.HCulture && (
+                  <div>
+                    <div>Hindu Culture :</div> {artsResult?.HCulture}
+                  </div>
+                )}
+                {artsResult?.Geography && (
+                  <div>
+                    <div> Geography :</div> {artsResult?.Geography}
+                  </div>
+                )}
+                {artsResult?.Economics && (
+                  <div>
+                    <div> Economics:</div> {artsResult?.Economics}
+                  </div>
+                )}
+                 {artsResult?.ICT && (
+                  <div>
+                    <div>ICT :</div> {artsResult?.ICT}
+                  </div>
+                )}
+                {artsResult?.Media && (
+                  <div>
+                    <div>Media :</div> {artsResult?.Media}
                   </div>
                 )}
               </div>
