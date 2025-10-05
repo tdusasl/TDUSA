@@ -25,7 +25,7 @@ const PastPapers = () => {
 
   return (
     <div ref={paperRef} className="paper-container" id="paperContainer">
-      <h1>Past Papers</h1>
+      <h1>Past Papers & Explainations</h1>
       <div className="card-container">
         {pastPapers.map((item: any, key: any) => (
           <div key={key} className="card">
@@ -44,7 +44,7 @@ const PastPapers = () => {
           </div>
         ))}
       </div>
-      <div className="card-container">
+      {/* <div className="card-container">
           <div  className="card">
             <h3 className="title">O/L Past Papers</h3>
             <div className="bar">
@@ -58,7 +58,7 @@ const PastPapers = () => {
             </div>
           </div>
 
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -19,15 +19,13 @@ const Results = () => {
   const bioResultUri = process.env.REACT_APP_RESULTS_BIO!;
   const mathsResultUri = process.env.REACT_APP_RESULTS_MATHS!;
   const commerceResultUri = process.env.REACT_APP_RESULTS_COMMERCE!;
-  // const eTechnologyResultUri = process.env.REACT_APP_RESULTS_ETECHNOLOGY!;
-  // const bioTechnologyResultUri = process.env.REACT_APP_RESULTS_BTECHNOLOGY!;
+  const eTechnologyResultUri = process.env.REACT_APP_RESULTS_ETECHNOLOGY!;
+  const bioTechnologyResultUri = process.env.REACT_APP_RESULTS_BTECHNOLOGY!;
   const [bioResult, setBioResult] = useState<BioResult["data"]>();
   const [mathsResult, setMathsResult] = useState<MathsResult["data"]>();
   const [commerceResult, setCommerceResult] = useState<ComResult["data"]>();
-  // const [eTechnologyResult, setETechnologyResult] =
-  //   useState<ETechResult["data"]>();
-  // const [bioTechnologyResult, setBioTechnologyResult] =
-  //   useState<BTechResult["data"]>();
+  const [eTechnologyResult, setETechnologyResult] = useState<ETechResult["data"]>();
+  const [bioTechnologyResult, setBioTechnologyResult] =useState<BTechResult["data"]>();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>();
@@ -59,21 +57,21 @@ const Results = () => {
       value: "Commerce",
       label: "Commerce",
     },
-    // {
-    //   value: "BioTechnology",
-    //   label: "Bio Technology",
-    // },
-    // {
-    //   value: "ETechnology",
-    //   label: "E Technology",
-    // },
+    {
+      value: "BioTechnology",
+      label: "Bio Technology",
+    },
+    {
+      value: "ETechnology",
+      label: "E Technology",
+    },
   ];
 
   const setResultsUndefined = () => {
     setBioResult(undefined);
     setMathsResult(undefined);
     setCommerceResult(undefined);
-    // setETechnologyResult(undefined);
+    setETechnologyResult(undefined);
     // setBioTechnologyResult(undefined);
   };
   const handleClose = () => {
@@ -96,7 +94,8 @@ const Results = () => {
     data: {
       Name: string;
       IndexNo: string;
-      Chemistry: string;
+      Option: string;
+      OptionRes: string;
       Mathematics: string;
       Physics: string;
       Rank: string;
@@ -113,28 +112,30 @@ const Results = () => {
       Rank: string;
     };
   }
-  // interface ETechResult {
-  //   data: {
-  //     Name: string;
-  //     IndexNo: string;
-  //     AGorICTorMath: string;
-  //     SFT: string;
-  //     ETech: string;
-  //     Rank: string;
-  //     ZScore: string;
-  //   };
-  // }
-  // interface BTechResult {
-  //   data: {
-  //     Name: string;
-  //     IndexNo: string;
-  //     ICTorAGRI: string;
-  //     SFT: string;
-  //     BTech: string;
-  //     Rank: string;
-  //     ZScore: string;
-  //   };
-  // }
+  interface ETechResult {
+    data: {
+      Name: string;
+      IndexNo: string;
+      Etech: string;
+      SFT: string;
+      Option: string;
+      OptionRes: string;
+      Rank: string;
+      ZScore: string;
+    };
+  }
+  interface BTechResult {
+    data: {
+      Name: string;
+      IndexNo: string;
+      Option: string;
+      OptionRes: string;
+      SFT: string;
+      Btech: string;
+      Rank: string;
+      ZScore: string;
+    };
+  }
 
   const fetchResults = () => {
     setResultsUndefined();
@@ -203,46 +204,52 @@ const Results = () => {
           },
         });
         break;
-      // case "BioTechnology":
-      //   uri = bioTechnologyResultUri;
-      //   setLoading(true);
-      //   Papa.parse(uri, {
-      //     download: true,
-      //     header: true,
-      //     step: function (row: BTechResult, parser) {
-      //       if (row.data.IndexNo === indexNo) {
-      //         setBioTechnologyResult(row.data);
-      //         setLoading(false);
-      //         parser.abort();
-      //       }
-      //     },
-      //     complete: function (results) {
-      //       setLoading(false);
-      //       console.log("Fetched all Data");
-      //       setError("No results found for this index number");
-      //     },
-      //   });
-      //   break;
-      // case "ETechnology":
-      //   uri = eTechnologyResultUri;
-      //   setLoading(true);
-      //   Papa.parse(uri, {
-      //     download: true,
-      //     header: true,
-      //     step: function (row: ETechResult, parser) {
-      //       if (row.data.IndexNo === indexNo) {
-      //         setETechnologyResult(row.data);
-      //         setLoading(false);
-      //         parser.abort();
-      //       }
-      //     },
-      //     complete: function (results) {
-      //       setLoading(false);
-      //       console.log("Fetched all Data");
-      //       setError("No results found for this index number");
-      //     },
-      //   });
-      //   break;
+      case "BioTechnology":
+        uri = bioTechnologyResultUri;
+        setLoading(true);
+        let found1 = false;
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: BTechResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              found1 = true;
+              setBioTechnologyResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            if (!found1) {
+              setError("No results found for this index number");}
+          },
+        });
+        break;
+      case "ETechnology":
+        uri = eTechnologyResultUri;
+        setLoading(true);
+        let found = false;
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: ETechResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              found = true;
+              setETechnologyResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            if (!found) {
+              setError("No results found for this index number");}
+          },
+        });
+        break;
       default:
         window.alert("Please select a stream");
         return;
@@ -384,6 +391,9 @@ const Results = () => {
                 <div>
                   <div>Name :</div> {mathsResult?.Name}
                 </div>
+                <div>
+                  <div>IndexNo :</div> {mathsResult?.IndexNo}
+                </div>
                 {mathsResult?.Mathematics && (
                   <div>
                     <div>Mathematics :</div> {mathsResult?.Mathematics}
@@ -394,9 +404,9 @@ const Results = () => {
                     <div>Physics :</div> {mathsResult?.Physics}
                   </div>
                 )}
-                {mathsResult?.Chemistry && (
+                {mathsResult?.Option && (
                   <div>
-                    <div>Chemistry :</div> {mathsResult?.Chemistry}
+                    <div> {mathsResult?.Option} :</div> {mathsResult?.OptionRes}
                   </div>
                 )}
                 {mathsResult?.Rank && (
@@ -441,7 +451,7 @@ const Results = () => {
                 )}
               </div>
             )}
-            {/* {bioTechnologyResult && (
+            {bioTechnologyResult && (
               <div className="result">
                 <div>
                   <div>Stream :</div> Bio Technology
@@ -449,19 +459,22 @@ const Results = () => {
                 <div>
                   <div>Name :</div> {bioTechnologyResult?.Name}
                 </div>
-                {bioTechnologyResult?.BTech && (
+                <div>
+                  <div>IndexNo :</div> {bioTechnologyResult?.IndexNo}
+                </div>
+                {bioTechnologyResult?.Btech && (
                   <div>
-                    <div>Bio Technology :</div> {bioTechnologyResult?.BTech}
+                    <div>Bio Technology :</div> {bioTechnologyResult?.Btech}
                   </div>
                 )}
                 {bioTechnologyResult?.SFT && (
                   <div>
-                    <div>Science for Tech :</div> {bioTechnologyResult?.SFT}
+                    <div>S.F.T :</div> {bioTechnologyResult?.SFT}
                   </div>
                 )}
-                {bioTechnologyResult?.ICTorAGRI && (
+                {bioTechnologyResult?.OptionRes && (
                   <div>
-                    <div>I.C.T or Agriculture :</div> {bioTechnologyResult?.ICTorAGRI}
+                    <div> {bioTechnologyResult?.Option} :</div> {bioTechnologyResult?.OptionRes}
                   </div>
                 )}
                 {bioTechnologyResult?.Rank && (
@@ -475,28 +488,30 @@ const Results = () => {
                   </div>
                 )}
               </div>
-            )} */}
-            {/* {eTechnologyResult && (
+            )}
+            {eTechnologyResult && (
               <div className="result">
                 <div>
-                  <div>Stream :</div> Engineering Technology
+                  <div>Stream :</div> Engineering Technology</div>
+                <div>
+                  <div> Name :</div> {eTechnologyResult?.Name}
                 </div>
                 <div>
-                  <div>Name :</div> {eTechnologyResult?.Name}
+                  <div>IndexNo :</div> {eTechnologyResult?.IndexNo}
                 </div>
-                {eTechnologyResult?.ETech && (
+                {eTechnologyResult?.Etech && (
                   <div>
-                    <div>Engineering Technology :</div> {eTechnologyResult?.ETech}
+                    <div>E-Tech :</div> {eTechnologyResult?.Etech}
                   </div>
                 )}
                 {eTechnologyResult?.SFT && (
                   <div>
-                    <div>Science for Tech :</div> {eTechnologyResult?.SFT}
+                    <div>S.F.T :</div> {eTechnologyResult?.SFT}
                   </div>
                 )}
-                {eTechnologyResult?.AGorICTorMath && (
+                {eTechnologyResult?.OptionRes && (
                   <div>
-                    <div>I.C.T or Agriculture or Maths :</div> {eTechnologyResult?.AGorICTorMath}
+                    <div> {eTechnologyResult?.Option} :</div> {eTechnologyResult?.OptionRes}
                   </div>
                 )}
                 {eTechnologyResult?.Rank && (
@@ -510,7 +525,7 @@ const Results = () => {
                   </div>
                 )}
               </div>
-            )} */}
+            )}
           </DialogContent>
           <DialogActions>
             <Button variant="outlined" onClick={fetchResults}>
