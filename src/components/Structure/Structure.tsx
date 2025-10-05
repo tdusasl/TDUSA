@@ -167,7 +167,7 @@ const Structure = () => {
               {" "}
               {executiveCommittee.map((item: any, key: any) => (
                 <div key={key}>
-                  <img width="80px" height="80px" src={item.photo} alt="" />
+                  <img width="80px" height="80px" src={item.photo} alt="" style={{ marginLeft: "5px", marginRight: "5px" }} />
                   <div>{item.name}</div>
                   <h4>{item.designation}</h4>
                 </div>
