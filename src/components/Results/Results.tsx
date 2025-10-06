@@ -18,13 +18,13 @@ import LinearProgress from "@mui/material/LinearProgress";
 const Results = () => {
   const bioResultUri = process.env.REACT_APP_RESULTS_BIO!;
   const mathsResultUri = process.env.REACT_APP_RESULTS_MATHS!;
-  // const commerceResultUri = process.env.REACT_APP_RESULTS_COMMERCE!;
+  const commerceResultUri = process.env.REACT_APP_RESULTS_COMMERCE!;
   const eTechnologyResultUri = process.env.REACT_APP_RESULTS_ETECHNOLOGY!;
   const bioTechnologyResultUri = process.env.REACT_APP_RESULTS_BTECHNOLOGY!;
   const artsResultUri = process.env.REACT_APP_RESULTS_ARTS!;
   const [bioResult, setBioResult] = useState<BioResult["data"]>();
   const [mathsResult, setMathsResult] = useState<MathsResult["data"]>();
-  // const [commerceResult, setCommerceResult] = useState<ComResult["data"]>();
+  const [commerceResult, setCommerceResult] = useState<ComResult["data"]>();
   const [eTechnologyResult, setETechnologyResult] = useState<ETechResult["data"]>();
   const [bioTechnologyResult, setBioTechnologyResult] =useState<BTechResult["data"]>();
   const [artsResult, setArtsResult] =useState<ArtsResult["data"]>();
@@ -55,10 +55,10 @@ const Results = () => {
       value: "Maths",
       label: "Maths",
     },
-    // {
-    //   value: "Commerce",
-    //   label: "Commerce",
-    // },
+    {
+      value: "Commerce",
+      label: "Commerce",
+    },
     {
       value: "BioTechnology",
       label: "Bio Technology",
@@ -76,9 +76,9 @@ const Results = () => {
   const setResultsUndefined = () => {
     setBioResult(undefined);
     setMathsResult(undefined);
-    // setCommerceResult(undefined);
+    setCommerceResult(undefined);
     setETechnologyResult(undefined);
-    // setBioTechnologyResult(undefined);
+    setBioTechnologyResult(undefined);
     setArtsResult(undefined);
   };
   const handleClose = () => {
@@ -109,18 +109,18 @@ const Results = () => {
       ZScore: string;
     };
   }
-  // interface ComResult {
-  //   data: {
-  //     Name: string;
-  //     IndexNo: string;
-  //     Economics: string;
-  //     BusinessStudies: string;
-  //     Accounting: string;
-  //     ICT : string;
-  //     ZScore:string;
-  //     Rank: string;
-  //   };
-  // }
+  interface ComResult {
+    data: {
+      Name: string;
+      IndexNo: string;
+      Economics: string;
+      BusinessStudies: string;
+      Accounting: string;
+      ICT : string;
+      ZScore:string;
+      Rank: string;
+    };
+  }
   interface ETechResult {
     data: {
       Name: string;
@@ -207,26 +207,26 @@ const Results = () => {
           },
         });
         break;
-      // case "Commerce":
-      //   uri = commerceResultUri;
-      //   setLoading(true);
-      //   Papa.parse(uri, {
-      //     download: true,
-      //     header: true,
-      //     step: function (row: ComResult, parser) {
-      //       if (row.data.IndexNo === indexNo) {
-      //         setCommerceResult(row.data);
-      //         setLoading(false);
-      //         parser.abort();
-      //       }
-      //     },
-      //     complete: function (results) {
-      //       setLoading(false);
-      //       console.log("Fetched all Data");
-      //       setError("No results found for this index number");
-      //     },
-      //   });
-      //   break;
+      case "Commerce":
+        uri = commerceResultUri;
+        setLoading(true);
+        Papa.parse(uri, {
+          download: true,
+          header: true,
+          step: function (row: ComResult, parser) {
+            if (row.data.IndexNo === indexNo) {
+              setCommerceResult(row.data);
+              setLoading(false);
+              parser.abort();
+            }
+          },
+          complete: function (results) {
+            setLoading(false);
+            console.log("Fetched all Data");
+            setError("No results found for this index number");
+          },
+        });
+        break;
       case "BioTechnology":
         uri = bioTechnologyResultUri;
         setLoading(true);
@@ -387,8 +387,8 @@ const Results = () => {
                           {error &&
               !(
                 bioResult ||
-                mathsResult 
-                // commerceResult
+                mathsResult|| 
+                commerceResult
               ) && <div className="result-error">{error}</div>}
 
             <DialogContentText id="alert-dialog-description"></DialogContentText>
@@ -468,7 +468,7 @@ const Results = () => {
                 )}
               </div>
             )}
-            {/* {commerceResult && (
+            {commerceResult && (
               <div className="result">
                 <div>
                   <div>Stream :</div> Commerce
@@ -510,7 +510,7 @@ const Results = () => {
                   </div>
                 )}
               </div>
-            )} */}
+            )}
             {bioTechnologyResult && (
               <div className="result">
                 <div>
